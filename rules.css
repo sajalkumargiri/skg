@@ -16,9 +16,9 @@ body {
 }
 
 .dropdown-button {
-  background-color: #0e7ac4; /* Darker blue color for the dropdown button */
+  background-color: #0975bd; /* Darker blue color for the dropdown button */
   color: white;
-  padding: 12px 20px; /* Adjust padding as needed */
+  padding: 14px 24px; /* Adjust padding as needed */
   border: none;
   cursor: pointer;
   width: 100%;
@@ -28,7 +28,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #0e7ac4; /* Darker blue color for the dropdown content background */
+  background-color: #0975bd; /* Darker blue color for the dropdown content background */
   color: black; /* Black color for the dropdown option text */
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
@@ -39,9 +39,9 @@ body {
 }
 
 .dropdown-content button {
-  background-color: #0e7ac4; /* Darker blue color for the dropdown options */
+  background-color: #0975bd; /* Darker blue color for the dropdown options */
   color: black; /* Black color for the dropdown option text */
-  padding: 10px 15px; /* Adjust padding as needed */
+  padding: 12px 20px; /* Adjust padding as needed */
   text-decoration: none;
   display: block;
   width: 100%;
@@ -49,7 +49,6 @@ body {
   border: none;
   border-bottom: 1px solid #ccc; /* Add bottom border between items */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
-  transition: background-color 0.3s; /* Smooth transition for background color change */
 }
 
 .dropdown-content button:last-child {
@@ -57,8 +56,8 @@ body {
 }
 
 .dropdown-content button:hover {
-  background-color: #0e7ac4; /* Change background color on hover to the same as button background */
-  color: white; /* White text color on hover */
+  background-color: #0975bd; /* Slightly darker shade of blue on hover */
+  color: #0975bd; /* White text color on hover */
 }
 
 p {
