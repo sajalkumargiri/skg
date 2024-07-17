@@ -12,12 +12,13 @@ body {
 .filter-dropdown {
   position: relative;
   display: inline-block;
+  margin-right: 10px; /* Adjust margin as needed */
 }
 
 .dropdown-button {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
+  padding: 12px 20px; /* Adjust padding as needed */
   border: none;
   cursor: pointer;
   width: 100%;
@@ -27,23 +28,29 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
+  background-color: #fff;
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
-  overflow-y: auto; 
-  max-height: 200px; 
+  max-height: 200px; /* Limit the height to avoid excessive size changes */
+  overflow-y: auto; /* Enable scrolling if content exceeds max height */
+  width: 100%;
+  border: 1px solid #ccc; /* Add border for better visibility */
 }
 
 .dropdown-content button {
-  background-color: inherit;
-  color: black;
-  padding: 12px 16px;
+  background-color: #fff;
+  color: #333;
+  padding: 10px 15px; /* Adjust padding as needed */
   text-decoration: none;
   display: block;
   width: 100%;
-  border: none;
   text-align: left;
+  border: none;
+  border-bottom: 1px solid #ddd; /* Add bottom border between items */
+}
+
+.dropdown-content button:last-child {
+  border-bottom: none; /* Remove bottom border from last item */
 }
 
 .dropdown-content button:hover {
@@ -53,6 +60,23 @@ body {
 .filter-dropdown:hover .dropdown-content {
   display: block;
 }
+
+/* Adjustments for dropdown arrow icon */
+.dropdown-button::after {
+  content: "▼";
+  float: right;
+  margin-left: 5px;
+}
+
+/* Style for active (open) dropdown button */
+.filter-dropdown.active .dropdown-button {
+  background-color: #3e8e41;
+}
+
+.filter-dropdown.active .dropdown-button::after {
+  content: "▲";
+}
+
 
 p {
   font-size: 100%;
