@@ -8,6 +8,7 @@ body {
   padding-top: 2.4rem;
   font-size: 10pt;
 }
+
 .filter-dropdown {
   position: relative;
   display: inline-block;
@@ -60,32 +61,6 @@ body {
 .filter-dropdown.active .dropdown-content {
   display: block;
 }
-
-/* Adjustments for dropdown arrow icon */
-.dropdown-button::after {
-  content: "▼";
-  float: right;
-  margin-left: 5px;
-}
-
-/* Style for active (open) dropdown button */
-.filter-dropdown.active .dropdown-button {
-  background-color: #3e8e41;
-}
-
-.filter-dropdown.active .dropdown-button::after {
-  content: "▲";
-}
-
-/* Style for active (open) dropdown button */
-.filter-dropdown.active .dropdown-button {
-  background-color: #3e8e41;
-}
-
-.filter-dropdown.active .dropdown-button::after {
-  content: "▲";
-}
-
 
 p {
   font-size: 100%;
