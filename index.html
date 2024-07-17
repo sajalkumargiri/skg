@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="plasmon, machine learning, quantum, transport" />
+    <meta
+      name="Nanoscale Light-Matter"
+      content="Nanoscale Light-Matter"
+    />
+    <title>Nanoscale Light-Matter</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link type="text/css" rel="stylesheet" href="rules.css" />
+    <link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://latex.codecogs.com/css/equation-embed.css" />
+    <script type="text/javascript" src="http://latex.codecogs.com/js/eq_config.js" ></script>
+    <script type="text/javascript" src="http://latex.codecogs.com/js/eq_editor-lite-18.js" ></script>
+
+  <style>
+    .image-row {
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+    }
+    .image-row img {
+      width: 10%; 
+      height: auto; 
+      padding: 2px;
+    }
+  </style>
+
+  <style>
+    .lgray {
+      background-color: #d8d8d8; 
+      padding: 20px;
+    }
+    .white {
+      background-color: white; 
+      padding: 20px;
+    }
+    .black {
+      background-color: black;
+      padding: 20px; 
+    }
+  </style>
+
+
+  <style>
+    .font-1 {
+      font-size: 38px; 
+      text-align: center;
+    }
+  </style>
+
+<style>
+
+  .filter-dropdown {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .filter-dropdown button {
+  display: inline-block; 
+  } 
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-width: 160px;
+  }
+
+  .dropdown-content button {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+  }
+
+  .dropdown-content button:hover {
+    background-color: #f9f9f9;
+  }
+
+  .publication {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .publication h3 {
+    margin-top: 0;
+  }
+
+  .publication p {
+    margin-bottom: 5px;
+  }
+</style>
+
+    
+</head>
+
+
+  
+  
+  <body>
+    
+    <div id="top_sec">
+      <!-- NAVIGATION -->
+      <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#research"><i class="fa fa-fw fa-laptop"></i> Research</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pub"><i class="fa fa-fw fa-book"></i> Publications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact_me"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+          
+
+
+      
+    
+<!!==================================================================================================================================
+    <!--Home -->
+    <div class="white">
+      <div class="container-fluid">
+        <div class="row text-center">
+          <div class="col-12">
+            <h1 class="display-4">Nanoscale Light-Matter</h1>
+          </div>
+          <hr class="light-90">
+        </div>
+        <div class="row">
+          <div class="col-sm-4 text-center">
+            <img src="fig/research_plasmon.jpg" class="img-fluid img_profile" alt="research_plasmon_im">
+          </div>
+          <div class="col-sm-8">
+            <p class="lead">
+                Welcome to my homepage! 
+                I am Sajal K. Giri, currently serving as a postdoctoral fellow in the research group of Prof. George C. Schatz.
+                Our research primarily focuses on the study of classical and quantum light induced dynamical processes that take place in atoms, molecules, and nanoscale systems by developing theories, and implementing computational methods. 
+                A significant part of our research delas with the development of machine learning (ML) methods to model the dynamics and spectroscopic aspects of such light induced processes. 
+              <br><br>
+              <a href="#research"><button type="button" target="_blank" class="btn btn-outline-secondary btn-md">Learn more</button></a>
+            </p>
+          </div>
+        </div>
+
+        
+        <!-- RESEARCH & EDUCATION SECTION -->
+        <div class="row ul-2col-lg">
+          <div class="col-lg-6">
+            <div class="li_title">
+              <h1 class="text-center font-1">Profile</h1>
+            </div>
+            <ul class="li-2col-lg">
+              <li>
+                <strong> Dec.2021-Present, Postdoc: </strong> Northwestern Univ., Evanston, USA with Prof. G. C. Schatz
+              </li>
+              <li>
+                <strong> 2021, ML Scientist:</strong> Entos Inc. (Iambic), California, USA 
+              </li>
+              <li>
+                <strong> 2020, Postdoc:</strong> Max-Planck Institute PKS, Dresden, Germany with Prof. J. M. Rost
+              </li>
+              <li>
+                <strong> 2020, Ph.D.: </strong> Max-Planck Institute PKS, Dresden, Germany with Prof. J. M. Rost
+              </li>
+              <li>
+                <strong> 2015, M.Sc.:</strong> IIT Kanpur, UP, India with Prof. S. Keshavamurthy
+              </li>
+              <li>
+                <strong> 2013, B.Sc.: </strong> Ramakrishna Mission Vidyamandira, Belur Math, India
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="li_title">
+              <h1 class="text-center font-1">Research Topics</h1>
+            </div>
+            <ul class="li-2col-lg">
+              <li> Can ML be used to gain insight into light-matter interactions beyond accelerating predictions?</li>
+              <br>
+              <li> Plasmon enhanced photocatalysis and spectroscopy</li>
+              <br>
+              <li> Nonlinear spectroscopy with entangled light</li>
+               <br>
+              <li> Charge and energy transfer at metal-molecule interface</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+
+
+      
+
+  
+
+<!!==================================================================================================================================
+    <!-- RESEARCH -->
+    <div class="lgray" id="research">
+      <div class="container-fluid padding">
+        <div class="row research text-center">
+          <div class="col-12">
+            <h1 class="font-1">Research</h1>
+          </div>
+          <hr class="light-90">
+        </div>
+        <div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2">
+            
+            <!-- RESEARCH A -->
+            <div class="col d-flex justify-content-center">
+              <div class="card text-center h-100">
+                <a href="./lngProject.html"><img
+                  src="./fig/research_ml.jpg"
+                  class="card-img"
+                  alt="research_ml_im"
+                  width="360px"
+                  style="
+                  height: auto;
+                  object-fit: contain;"/></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Machine Learning Light-Matter
+                  </h4>
+                  <p class="card-text">
+                      The understanding of light-induced dynamics in molecules and nanoscale systems is often limited due to their inherent complexities.
+                      Are all these complexities essential that we take into consideration for solving the dynamics or provide enough transparency to gain insights?
+                      If there exists a subspace with minimal complexities encoding the essential dynamics then the problem is simplified significantly.
+                      But how do we explore that space if it exists at all? We combine quantum dynamics with machine learning methods to address this point. 
+                  </p>
+                  <a href="#pub" class="btn btn-primary">Learn more!</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- RESEARCH B -->
+            <div class="col d-flex justify-content-center">
+              <div class="card text-center h-100">
+                <a href="./lngProject.html"><img
+                  src="./fig/research_plasmon.gif"
+                  class="card-img"
+                  alt="..."
+                  style="height: auto;
+                  object-fit: contain;"/></a>
+                <!--
+                <video loop autoplay controls
+                class="card-img"
+                alt="..."><source src="./fig/simOpt.mp4" type="video/mp4"></video>
+                -->
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Plasmon Light-Matter
+                  </h4>
+                  <p class="card-text">
+                      Nanomaterials exhibit efficient light absorption across a broad spectral range, largely attributed to localized surface plasmon resonance (LSPR).
+                      Within this research field, the central focus lies in understanding hot-carrier dynamics generated through the decay of LSPR and their role in potential applications for harnessing solar radiation.
+                      We develope theory and model to elucidate such complex dynamics, including plasmon-driven chemical reactions, surface-enhanced Raman scattering (SERS), and harmonic generation processes.
+                  </p>
+                  <a href="#pub" class="btn btn-primary">Learn more!</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- RESEARCH C -->
+            <div class="col d-flex justify-content-center">
+              <div class="card text-center h-100">
+                <a href="./lngProject.html"><img
+                  src="./fig/research_entanglement.jpg"
+                  class="card-img"
+                  alt="research_entanglement_im"
+                  width="360px"
+                  style="
+                  height: auto;
+                  object-fit: contain;"/></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Quantum Light-Matter
+                  </h4>
+                  <p class="card-text">
+                      We explore quantum advantages in spectroscopic problems of molecules under full quantum description i.e., treating both system and light quantum mechanically.
+                      The main motivation behind this is whether we can go beyond the fundamental limits of conventional classical light spectroscopy and control the nonlinear optical processes.
+                      We develope theoretical methods to explore entangled light induced dynamics in molecules modeling the quantum state of light and their interactions with molecules. 
+                  </p>
+                  <a href="#pub" class="btn btn-primary">Learn more!</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- RESEARCH D -->
+            <div class="col d-flex justify-content-center">
+              <div class="card text-center h-100">
+                <a href="./lngProject.html"><img
+                  src="./fig/research_qt.jpg"
+                  class="card-img"
+                  alt="research_qt_im"
+                  width="370px"
+                  style="
+                  height: auto;
+                  object-fit: contain;"/></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Quantum Transport
+                  </h4>
+                  <p class="card-text">
+                      A nontrivial geometric phase emerges in quantum transport dynamics as a consequence of external periodic drivings.
+                      We explore the effect of this phase in transport processes and importantly control them with external drivings through effective modeling of the dynamics. 
+                  </p>
+                  <a href="#pub" class="btn btn-primary">Learn more!</a>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+<!!==================================================================================================================================
+    <!-- Publications -->
+    <div class="white" id="pub">
+      <div class="container-fluid padding">
+        <div class="row pub text-center">
+          <div class="col-12">
+            <h1 class="font-1">Publications</h1>
+          </div>
+
+          <div class="col-12 text-left">
+            <h5> Sort by Year || Research</h5>
+          </div>
+
+          <div class="col-md-2 filter-dropdown">
+          <button id="filter-year-btn" class="dropdown-button">Year ▼ (All)</button>
+          <div class="dropdown-content" id="filter-year-options">
+            <button data-filter="all">All</button>
+            <button data-filter="2024">2024</button>
+            <button data-filter="2023">2023</button>
+            <button data-filter="2022">2022</button>
+            <button data-filter="2021">2021</button>
+            <button data-filter="2020">2020</button>
+            <button data-filter="2019">2019</button>
+            <button data-filter="2018">2018</button>
+            <button data-filter="2017">2017</button>
+          </div>
+        </div>
+        
+        <div class="col-md-2 filter-dropdown">
+          <button id="filter-area-btn" class="dropdown-button">Research ▼ (All) </button>
+          <div class="dropdown-content" id="filter-area-options">
+            <button data-filter="all">All</button>
+            <button data-filter="ml">ML</button>
+            <button data-filter="plasmon">Plasmon</button>
+            <button data-filter="ent">Entanglement</button>
+            <button data-filter="transport">Transport</button>
+            <button data-filter="ultrafast">Ultrafast</button>
+          </div>
+        </div>
+
+
+
+          <hr class="light-90">
+
+          <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
+              <h4> Switching of electrochemical selectivity due to plasmonic field-induced dissociation</h4>
+              <p>Author(s): F. M. Alcorn , <strong> S. K. Giri </strong>, M. Chattoraj , R. Nixon , G. C. Schatz, Prashant K. Jain </p>
+              <a href="./lngProject.html" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
+              <h4> Laser pulse induced second- and third-harmonic generation of gold nanorods with real-time time-dependent density functional tight binding (RT-TDDFTB) method</h4>
+              <p>Journal: <strong> J. Chem. Phys.</strong> (2024)</p>
+              <p>Author(s): <strong> S. K. Giri </strong>, and G. C. Schatz</p>
+              <a href="https://arxiv.org/abs/2405.00913" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2024" data-area="ml">
+              <h4> Roadmap on data-centric materials science</h4>
+              <p>Journal: <strong> Modelling Simul. Mater. Sci. Eng. </strong> 32, 063301 (2024) </p>
+              <p>Author(s): S. Bauer, ..., <strong> S. K. Giri</strong> et al. </p>
+              <a href="https://iopscience.iop.org/article/10.1088/1361-651X/ad4d0d/meta" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
+              <h4> Plasmon-enhanced spectroscopy and photocatalysis</h4>
+              <p>Journal: <strong> arXiv:2402.13478 </strong> (2024) </p>
+              <p>Author(s): <strong> S. K. Giri</strong>,  and G. C. Schatz </p>  
+              <a href="https://arxiv.org/abs/2402.13478" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2023" data-area="ent">
+              <h4> Colors of entangled two-photon absorption</h4>
+              <p>Journal: <strong> Proc. Natl. Acad. Sci. (USA) </strong> 120, e2307719120 (2023) </p>
+              <p>Author(s): O. Varnavski, <strong> S. K. Giri </strong>, T. Chiang, C. J. Zeman IV, G. C. Schatz, and T. Goodson III </p>
+              <a href="https://www.pnas.org/doi/10.1073/pnas.2307719120" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2023" data-area="plasmon">
+              <h4> Photodissociation of H2 on Ag and Au nanoparticles: Effect of size and plasmon versus interband transitions on threshold intensities for dissociation</h4>
+              <p>Journal: <strong> J. Phys. Chem. C </strong> 127, 4115 (2023) </p>
+              <p>Author(s): <strong> S. K. Giri </strong>,  and G. C. Schatz </p>  
+              <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpcc.3c00006" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2022" data-area="ent">
+              <h4> Manipulating two-photon absorption of molecules through efficient optimization of entangled light </h4>
+              <p>Journal: <strong> J. Phys. Chem. Lett. </strong> 13, 10140 (2022)  </p>
+              <p>Author(s): <strong> S. K. Giri </strong>,  and G. C. Schatz </p>  
+              <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c02842" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2022" data-area="transport">
+              <h4> Controlling thermodynamics of a quantum heat engine with modulated amplitude drivings  </h4>
+              <p>Journal: <strong> Phys. Rev. E </strong> 106, 024131 (2022) </p>
+              <p>Author(s): <strong> S. K. Giri </strong>,  and  H. P. Goswami </p>  
+              <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.106.024131" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2021" data-area="ml">
+              <h4> Perspectives for analyzing non-linear photo ionization spectra with deep neural networks trained with synthetic Hamilton matrices </h4>
+              <p>Journal: <strong> Faraday Discuss. </strong> 228, 502 (2021) </p>
+              <p>Author(s): <strong> S. K. Giri </strong>, L. Alonso, U. Saalmann, and J. M. Rost</p>  
+              <a href="https://pubs.rsc.org/en/content/articlelanding/2021/fd/d0fd00117a" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2020" data-area="ml">
+              <h4> Purifying electron spectra from noisy pulses with machine learning using synthetic Hamilton matrices </h4>
+              <p>Journal: <strong> Phys. Rev. Lett. </strong> 124, 113201 (2020) </p>
+              <p>Author(s): <strong> S. K. Giri </strong>, U. Saalmann, and J. M. Rost </p>  
+              <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.113201" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2019" data-area="ml">
+              <h4> Nonequilibrium fluctuations of a driven quantum heat engine via machine learning </h4>
+              <p>Journal: <strong> Phys. Rev. E </strong> 99, 022104 (2019) </p>
+              <p>Author(s): <strong> S. K. Giri </strong>,  and  H. P. Goswami </p>  
+              <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.99.022104" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2018" data-area="ultrafast">
+              <h4> Adiabatic passage to the continuum: Controlling ionization with chirped laser pulses </h4>
+              <p>Journal: <strong> Phys. Rev. Lett. </strong> 121, 153203 (2018) </p>
+              <p>Author(s): U. Saalmann, <strong> S. K. Giri </strong> and J. M. Rost </p>  
+              <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.153203" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2017" data-area="transport">
+              <h4> Geometric phaselike effects in a quantum heat engine  </h4>
+              <p>Journal: <strong> Phys. Rev. E </strong> 96, 052129 (2017) </p>
+              <p>Author(s): <strong> S. K. Giri </strong>,  and  H. P. Goswami </p>  
+              <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.96.052129" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+          <div class="col-12 publication text-left" data-year="2017" data-area="ultrafast">
+              <h4> Single-photon ionization in intense, fluctuating pulses </h4>
+              <p>Journal: <strong> J. Mod. Opt. </strong> 64, 1004 (2017) </p>
+              <p>Author(s): <strong> S. K. Giri </strong>, U. Saalmann, and J. M. Rost </p>  
+              <a href="https://www.tandfonline.com/doi/full/10.1080/09500340.2016.1271150" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+          </div>
+
+        </div>
+      </div>
+    </div>
+      
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const filterYearButton = document.getElementById("filter-year-btn");
+    const filterYearOptions = document.getElementById("filter-year-options");
+    const filterAreaButton = document.getElementById("filter-area-btn");
+    const filterAreaOptions = document.getElementById("filter-area-options");
+    const publications = document.querySelectorAll(".publication");
+
+    function toggleDropdown(dropdown) {
+      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    }
+
+    function filterPublications() {
+      const selectedYear = filterYearButton.getAttribute("data-filter");
+      const selectedArea = filterAreaButton.getAttribute("data-filter");
+
+      publications.forEach(publication => {
+        const publicationYear = publication.getAttribute("data-year");
+        const publicationArea = publication.getAttribute("data-area");
+
+        const yearFilterMatches = (selectedYear === "all" || selectedYear === publicationYear);
+        const areaFilterMatches = (selectedArea === "all" || selectedArea === publicationArea);
+
+        if (yearFilterMatches && areaFilterMatches) {
+          publication.style.display = "block";
+        } else {
+          publication.style.display = "none";
+        }
+      });
+    }
+
+    // Set default filters to "all" and update button text
+    filterYearButton.setAttribute("data-filter", "all");
+    filterYearButton.textContent = "Year ▼ (All)";
+
+    filterAreaButton.setAttribute("data-filter", "all");
+    filterAreaButton.textContent = "Research ▼ (All)";
+
+    filterYearButton.addEventListener("click", function() {
+      toggleDropdown(filterYearOptions);
+    });
+
+    filterYearOptions.addEventListener("click", function(event) {
+      const target = event.target;
+      if (target.tagName === "BUTTON") {
+        const yearFilter = target.getAttribute("data-filter");
+        filterYearButton.textContent = `(${target.textContent})`;
+        filterYearButton.setAttribute("data-filter", yearFilter);
+        filterYearOptions.style.display = "none";
+        filterPublications();
+      }
+    });
+
+    filterAreaButton.addEventListener("click", function() {
+      toggleDropdown(filterAreaOptions);
+    });
+
+    filterAreaOptions.addEventListener("click", function(event) {
+      const target = event.target;
+      if (target.tagName === "BUTTON") {
+        const areaFilter = target.getAttribute("data-filter");
+        filterAreaButton.textContent = `(${target.textContent})`;
+        filterAreaButton.setAttribute("data-filter", areaFilter);
+        filterAreaOptions.style.display = "none";
+        filterPublications();
+      }
+    });
+
+    document.addEventListener("click", function(event) {
+      if (!filterYearOptions.contains(event.target) && event.target !== filterYearButton) {
+        filterYearOptions.style.display = "none";
+      }
+      if (!filterAreaOptions.contains(event.target) && event.target !== filterAreaButton) {
+        filterAreaOptions.style.display = "none";
+      }
+    });
+
+    filterPublications(); // Initial filter application on page load
+  });
+</script>
+
+
+
+
+      
+      
+
+      
+    <!!================================================================================================
+    <!--  FOOTER  -->
+    <footer>
+      <div class="container-fluid" id="contact_me">
+        <div class="row text-center">
+          <div class="col-md-4" style="padding-bottom: 0;">
+            <p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2962.3178394117144!2d-87.67845232381927!3d42.05780617122262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fda9f1ce32d5f%3A0x2ed194bb956cab66!2sNorthwestern%20University%20Technological%20Institute!5e0!3m2!1sen!2sus!4v1714790287850!5m2!1sen!2sus" 
+                width="300" height="200" 
+                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </p>
+          </div>
+          <div class="col-md-8" style="padding-bottom: 0;">
+            <hr class="light-90" style="border-color: antiquewhite;">
+            <h5>Contact</h5>
+            <hr class="light-90" style="border-color: antiquewhite">
+            <div class="col-12 social padding">
+              <a href="https://scholar.google.com/citations?user=HlKvDGoAAAAJ&hl=en" target="blank"><i class="ai ai-google-scholar-square"></i></a>
+              <a href="https://twitter.com/SajalKGiri"><i class="fab fa-twitter"></i></a>
+              <a href="mailto:sajal.giri@northwestern.edu"><i class="fa fa-envelope"></i></a>
+            </div>
+          </div>
+
+
+        <div class="image-row">
+          <img src="fig/logo1_im.png" alt="logo1_im_">  
+          <img src="fig/logo2_im.png" alt="logo2_im_"> 
+          <img src="fig/logo3_im.png" alt="logo3_im_">  
+        </div>
+          
+          
+          <div class="col-12" style="padding-bottom: 0;">
+            <hr class="light-100" style="border-color: antiquewhite;">
+            <p>&copy; 2024 Sajal K. Giri</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let tid = "#pub_table";
+      let headers = document.querySelectorAll(tid + " th");
+      
+      // Sort the table element when clicking on the table headers
+      headers.forEach(function(element, i) {
+        element.addEventListener("click", function() {
+          w3.sortHTML(tid, ".item", "td:nth-child(" + (i + 1) + ")");
+        });
+      });
+    </script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script>
+      // Navbar colapse after click
+        $('.navbar-collapse a').click(function(){
+            $(".navbar-collapse").collapse('hide');
+        });
+    </script>
+  </body>
+</html>
