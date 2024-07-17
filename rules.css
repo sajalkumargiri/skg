@@ -16,7 +16,7 @@ body {
 }
 
 .dropdown-button {
-  background-color: #2196F3; /* Blue color for the dropdown button */
+  background-color: #0e7ac4; /* Darker blue color for the dropdown button */
   color: white;
   padding: 12px 20px; /* Adjust padding as needed */
   border: none;
@@ -28,7 +28,8 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #2196F3; /* Blue color for the dropdown content background */
+  background-color: #0e7ac4; /* Darker blue color for the dropdown content background */
+  color: #fff; /* White color for the dropdown option text */
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
   max-height: 200px; /* Limit the height to avoid excessive size changes */
@@ -38,8 +39,8 @@ body {
 }
 
 .dropdown-content button {
-  background-color: #2196F3; /* Blue color for the dropdown options */
-  color: white;
+  background-color: #0e7ac4; /* Darker blue color for the dropdown options */
+  color: #fff; /* White color for the dropdown option text */
   padding: 10px 15px; /* Adjust padding as needed */
   text-decoration: none;
   display: block;
@@ -55,11 +56,7 @@ body {
 }
 
 .dropdown-content button:hover {
-  background-color: #0e7ac4; /* Darker shade of blue on hover */
-}
-
-.filter-dropdown.active .dropdown-content {
-  display: block;
+  background-color: #085c99; /* Slightly darker shade of blue on hover */
 }
 
 
