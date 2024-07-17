@@ -512,93 +512,10 @@
     </div>
       
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const filterYearButton = document.getElementById("filter-year-btn");
-    const filterYearOptions = document.getElementById("filter-year-options");
-    const filterAreaButton = document.getElementById("filter-area-btn");
-    const filterAreaOptions = document.getElementById("filter-area-options");
-    const publications = document.querySelectorAll(".publication");
-
-    function toggleDropdown(dropdown) {
-      dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-    }
-
-    function filterPublications() {
-      const selectedYear = filterYearButton.getAttribute("data-filter");
-      const selectedArea = filterAreaButton.getAttribute("data-filter");
-
-      publications.forEach(publication => {
-        const publicationYear = publication.getAttribute("data-year");
-        const publicationArea = publication.getAttribute("data-area");
-
-        const yearFilterMatches = (selectedYear === "all" || selectedYear === publicationYear);
-        const areaFilterMatches = (selectedArea === "all" || selectedArea === publicationArea);
-
-        if (yearFilterMatches && areaFilterMatches) {
-          publication.style.display = "block";
-        } else {
-          publication.style.display = "none";
-        }
-      });
-    }
-
-    // Set default filters to "all" and update button text
-    filterYearButton.setAttribute("data-filter", "all");
-    filterYearButton.textContent = "Year ▼ (All)";
-
-    filterAreaButton.setAttribute("data-filter", "all");
-    filterAreaButton.textContent = "Research ▼ (All)";
-
-    filterYearButton.addEventListener("click", function() {
-      toggleDropdown(filterYearOptions);
-    });
-
-    filterYearOptions.addEventListener("click", function(event) {
-      const target = event.target;
-      if (target.tagName === "BUTTON") {
-        const yearFilter = target.getAttribute("data-filter");
-        filterYearButton.textContent = `▼(${target.textContent})`;
-        filterYearButton.setAttribute("data-filter", yearFilter);
-        filterYearOptions.style.display = "none";
-        filterPublications();
-      }
-    });
-
-    filterAreaButton.addEventListener("click", function() {
-      toggleDropdown(filterAreaOptions);
-    });
-
-    filterAreaOptions.addEventListener("click", function(event) {
-      const target = event.target;
-      if (target.tagName === "BUTTON") {
-        const areaFilter = target.getAttribute("data-filter");
-        filterAreaButton.textContent = `▼(${target.textContent})`;
-        filterAreaButton.setAttribute("data-filter", areaFilter);
-        filterAreaOptions.style.display = "none";
-        filterPublications();
-      }
-    });
-
-    document.addEventListener("click", function(event) {
-      if (!filterYearOptions.contains(event.target) && event.target !== filterYearButton) {
-        filterYearOptions.style.display = "none";
-      }
-      if (!filterAreaOptions.contains(event.target) && event.target !== filterAreaButton) {
-        filterAreaOptions.style.display = "none";
-      }
-    });
-
-    filterPublications(); // Initial filter application on page load
-  });
-</script>
-
-
 
 
       
-      
-
+  
       
     <!!================================================================================================
     <!--  FOOTER  -->
@@ -638,6 +555,94 @@
         </div>
       </div>
     </footer>
+
+      
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const filterYearButton = document.getElementById("filter-year-btn");
+        const filterYearOptions = document.getElementById("filter-year-options");
+        const filterAreaButton = document.getElementById("filter-area-btn");
+        const filterAreaOptions = document.getElementById("filter-area-options");
+        const publications = document.querySelectorAll(".publication");
+    
+        function toggleDropdown(dropdown) {
+          dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+        }
+    
+        function filterPublications() {
+          const selectedYear = filterYearButton.getAttribute("data-filter");
+          const selectedArea = filterAreaButton.getAttribute("data-filter");
+    
+          publications.forEach(publication => {
+            const publicationYear = publication.getAttribute("data-year");
+            const publicationArea = publication.getAttribute("data-area");
+    
+            const yearFilterMatches = (selectedYear === "all" || selectedYear === publicationYear);
+            const areaFilterMatches = (selectedArea === "all" || selectedArea === publicationArea);
+    
+            if (yearFilterMatches && areaFilterMatches) {
+              publication.style.display = "block";
+            } else {
+              publication.style.display = "none";
+            }
+          });
+        }
+    
+        // Set default filters to "all" and update button text
+        filterYearButton.setAttribute("data-filter", "all");
+        filterYearButton.textContent = "Year ▼ (All)";
+    
+        filterAreaButton.setAttribute("data-filter", "all");
+        filterAreaButton.textContent = "Research ▼ (All)";
+    
+        filterYearButton.addEventListener("click", function() {
+          toggleDropdown(filterYearOptions);
+        });
+    
+        filterYearOptions.addEventListener("click", function(event) {
+          const target = event.target;
+          if (target.tagName === "BUTTON") {
+            const yearFilter = target.getAttribute("data-filter");
+            filterYearButton.textContent = `▼ (${target.textContent})`;
+            filterYearButton.setAttribute("data-filter", yearFilter);
+            filterYearOptions.style.display = "none";
+            filterPublications();
+          }
+        });
+    
+        filterAreaButton.addEventListener("click", function() {
+          toggleDropdown(filterAreaOptions);
+        });
+    
+        filterAreaOptions.addEventListener("click", function(event) {
+          const target = event.target;
+          if (target.tagName === "BUTTON") {
+            const areaFilter = target.getAttribute("data-filter");
+            filterAreaButton.textContent = `▼ (${target.textContent})`;
+            filterAreaButton.setAttribute("data-filter", areaFilter);
+            filterAreaOptions.style.display = "none";
+            filterPublications();
+          }
+        });
+    
+        document.addEventListener("click", function(event) {
+          if (!filterYearOptions.contains(event.target) && event.target !== filterYearButton) {
+            filterYearOptions.style.display = "none";
+          }
+          if (!filterAreaOptions.contains(event.target) && event.target !== filterAreaButton) {
+            filterAreaOptions.style.display = "none";
+          }
+        });
+    
+        filterPublications(); // Initial filter application on page load
+      });
+    </script>
+
+
+      
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     <script>
@@ -685,5 +690,8 @@
             $(".navbar-collapse").collapse('hide');
         });
     </script>
+
+
+      
   </body>
 </html>
