@@ -49,6 +49,7 @@ body {
   border: none;
   border-bottom: 1px solid #ccc; /* Add bottom border between items */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
+  transition: background-color 0.3s; /* Smooth transition for background color change */
 }
 
 .dropdown-content button:last-child {
@@ -56,7 +57,7 @@ body {
 }
 
 .dropdown-content button:hover {
-  background-color: #085c99; /* Slightly darker shade of blue on hover */
+  background-color: #0e7ac4; /* Change background color on hover to the same as button background */
   color: white; /* White text color on hover */
 }
 
