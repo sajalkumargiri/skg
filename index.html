@@ -558,7 +558,7 @@
       const target = event.target;
       if (target.tagName === "BUTTON") {
         const yearFilter = target.getAttribute("data-filter");
-        filterYearButton.textContent = `(${target.textContent})`;
+        filterYearButton.textContent = `▼(${target.textContent})`;
         filterYearButton.setAttribute("data-filter", yearFilter);
         filterYearOptions.style.display = "none";
         filterPublications();
@@ -573,7 +573,7 @@
       const target = event.target;
       if (target.tagName === "BUTTON") {
         const areaFilter = target.getAttribute("data-filter");
-        filterAreaButton.textContent = `(${target.textContent})`;
+        filterAreaButton.textContent = `▼(${target.textContent})`;
         filterAreaButton.setAttribute("data-filter", areaFilter);
         filterAreaOptions.style.display = "none";
         filterPublications();
