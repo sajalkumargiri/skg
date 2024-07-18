@@ -419,16 +419,22 @@
           <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
               <h4> Switching of electrochemical selectivity due to plasmonic field-induced dissociation</h4>
               <p>Author(s): F. M. Alcorn , <strong> S. K. Giri </strong>, M. Chattoraj , R. Nixon , G. C. Schatz, Prashant K. Jain </p>
-            
-              <a href="./construction.html" class="btn btn-outline-dark btn-lg mt-2" >DOI</a> 
-            
+                      
             <div class="container text-left mt-5">
-              <button id="showbibinfo" class="btn btn-outline-dark btn-lg mt-2">BibTex</button>
+              <div class="row">
+                <div class="col-md-6">
+                  <a href="./construction.html" class="btn btn-outline-dark btn-lg mt-2">DOI</a>
+                </div>
+                <div class="col-md-6">
+                  <button id="showbibinfo" class="btn btn-outline-dark btn-lg mt-2">BibTex</button>
+                </div>
+              </div>
               <div id="bibinfo" class="expand-info">
                 <p>Bib...</p>
                 <p>Year</p>
               </div>
-            </div>
+             </div>
+
 
       
           </div>
@@ -575,24 +581,29 @@
       </div>
     </footer>
 
-      
+          
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         var showButton = document.getElementById('showbibinfo');
-        var productInfo = document.getElementById('bibinfo');
+        var bibinfo = document.getElementById('bibinfo');
     
-        showButton.addEventListener('click', function() {
-          bibinfo.style.display = 'block';
+        showButton.addEventListener('click', function(event) {
+          if (bibinfo.style.display === 'block') {
+            bibinfo.style.display = 'none';
+          } else {
+            bibinfo.style.display = 'block';
+          }
+          event.stopPropagation(); // Prevent event from bubbling up
         });
     
         document.addEventListener('click', function(event) {
-          var isClickInside = showButton.contains(event.target) || bibtinfo.contains(event.target);
-          if (!isClickInside) {
+          if (!showButton.contains(event.target) && !bibinfo.contains(event.target)) {
             bibinfo.style.display = 'none';
           }
         });
       });
     </script>
+
 
 
     <script>
