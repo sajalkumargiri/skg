@@ -423,8 +423,8 @@
               <a href="./construction.html" class="btn btn-outline-dark btn-lg mt-2" >DOI</a> 
             
             <div class="container text-left mt-5">
-              <button id="showBibInfo" class="btn btn-outline-dark btn-lg mt-2">BibTex</button>
-              <div id="productInfo" class="expand-info">
+              <button id="showbibinfo" class="btn btn-outline-dark btn-lg mt-2">BibTex</button>
+              <div id="bibinfo" class="expand-info">
                 <p>Bib...</p>
                 <p>Year</p>
               </div>
@@ -578,17 +578,17 @@
       
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var showButton = document.getElementById('showProductInfo');
-        var productInfo = document.getElementById('productInfo');
+        var showButton = document.getElementById('showbibinfo');
+        var productInfo = document.getElementById('bibinfo');
     
         showButton.addEventListener('click', function() {
-          productInfo.style.display = 'block';
+          bibinfo.style.display = 'block';
         });
     
         document.addEventListener('click', function(event) {
-          var isClickInside = showButton.contains(event.target) || productInfo.contains(event.target);
+          var isClickInside = showButton.contains(event.target) || bibtinfo.contains(event.target);
           if (!isClickInside) {
-            productInfo.style.display = 'none';
+            bibinfo.style.display = 'none';
           }
         });
       });
