@@ -23,6 +23,7 @@ body {
   cursor: pointer;
   width: 100%;
   text-align: center;
+  white-space: nowrap; /* Ensures text stays on one line */
 }
 
 .dropdown-content {
