@@ -415,47 +415,49 @@
 
         <hr class="light-90">
           
-        <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
-            <h4>Switching of electrochemical selectivity due to plasmonic field-induced dissociation</h4>
-            <p>Author(s): F. M. Alcorn , <strong>S. K. Giri</strong>, M. Chattoraj , R. Nixon , G. C. Schatz, Prashant K. Jain</p>
-        
-            <div class="container text-left mt-0">
-                <div class="row">
-                    <div class="col-md-1">
-                        <a href="./construction.html" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a>
-                    </div>
-                    <div class="col-md-1">
-                        <a id="showbibinfo14" class="btn btn-outline-secondary btn-lg mt-2">BibTex</a>
-                    </div>
-                </div>
-                <div id="bibinfo14" class="expand-info">
-                    <p>Bib...</p>
-                    <p>Year</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
-            <h4>Laser pulse induced second- and third-harmonic generation of gold nanorods with real-time time-dependent density functional tight binding (RT-TDDFTB) method</h4>
-            <p>Journal: <strong>J. Chem. Phys.</strong> (2024)</p>
-            <p>Author(s): <strong>S. K. Giri</strong>, and G. C. Schatz</p>
-        
-            <div class="container text-left mt-0">
-                <div class="row">
-                    <div class="col-md-1">
-                        <a href="https://arxiv.org/abs/2405.00913" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a>
-                    </div>
-                    <div class="col-md-1">
-                        <a id="showbibinfo13" class="btn btn-outline-secondary btn-lg mt-2">BibTex</a>
-                    </div>
-                </div>
-                <div id="bibinfo13" class="expand-info">
-                    <p>Bib...</p>
-                    <p>Year</p>
-                </div>
-            </div>
-        </div>
-        
+          <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
+              <h4>Switching of electrochemical selectivity due to plasmonic field-induced dissociation</h4>
+              <p>Author(s): F. M. Alcorn , <strong>S. K. Giri</strong>, M. Chattoraj , R. Nixon , G. C. Schatz, Prashant K. Jain</p>
+          
+              <div class="container text-left mt-0">
+                  <div class="row">
+                      <div class="col-md-1">
+                          <a href="./construction.html" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a>
+                      </div>
+                      <div class="col-md-1">
+                          <!-- Unique id for BibTex button -->
+                          <a id="showbibinfo1" class="showbibinfo btn btn-outline-secondary btn-lg mt-2">BibTex</a>
+                      </div>
+                  </div>
+                  <!-- Unique id for BibTex info -->
+                  <div id="bibinfo1" class="bibinfo expand-info">
+                      <p>BibTeX information for the first publication...</p>
+                  </div>
+              </div>
+          </div>
+          
+          <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
+              <h4>Laser pulse induced second- and third-harmonic generation of gold nanorods with real-time time-dependent density functional tight binding (RT-TDDFTB) method</h4>
+              <p>Journal: <strong>J. Chem. Phys.</strong> (2024)</p>
+              <p>Author(s): <strong>S. K. Giri</strong>, and G. C. Schatz</p>
+          
+              <div class="container text-left mt-0">
+                  <div class="row">
+                      <div class="col-md-1">
+                          <a href="https://arxiv.org/abs/2405.00913" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a>
+                      </div>
+                      <div class="col-md-1">
+                          <!-- Unique id for BibTex button -->
+                          <a id="showbibinfo2" class="showbibinfo btn btn-outline-secondary btn-lg mt-2">BibTex</a>
+                      </div>
+                  </div>
+                  <!-- Unique id for BibTex info -->
+                  <div id="bibinfo2" class="bibinfo expand-info">
+                      <p>BibTeX information for the second publication...</p>
+                  </div>
+              </div>
+          </div>
+
 
         
 
@@ -590,12 +592,13 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           // Select all elements with class 'showbibinfo' (all BibTex buttons)
-          var bibButtons = document.querySelectorAll('.btn.btn-outline-secondary.btn-lg.mt-2');
+          var bibButtons = document.querySelectorAll('.showbibinfo');
       
           // Add click event listener to each BibTex button
           bibButtons.forEach(function(button) {
               button.addEventListener('click', function(event) {
-                  var bibinfo = this.parentNode.nextElementSibling;
+                  var bibinfoId = this.getAttribute('id').replace('showbibinfo', 'bibinfo');
+                  var bibinfo = document.getElementById(bibinfoId);
                   toggleVisibility(bibinfo);
                   event.stopPropagation(); // Prevent event from bubbling up
               });
@@ -604,7 +607,8 @@
           // Add a click event listener to the document to hide bibinfo if clicked outside
           document.addEventListener('click', function(event) {
               bibButtons.forEach(function(button) {
-                  var bibinfo = button.parentNode.nextElementSibling;
+                  var bibinfoId = button.getAttribute('id').replace('showbibinfo', 'bibinfo');
+                  var bibinfo = document.getElementById(bibinfoId);
                   if (!button.contains(event.target) && !bibinfo.contains(event.target)) {
                       bibinfo.style.display = 'none';
                   }
@@ -620,7 +624,6 @@
               }
           }
       });
-
     </script>
 
 
