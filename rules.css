@@ -22,7 +22,7 @@ body {
   border: none;
   cursor: pointer;
   width: 100%;
-  text-align: center;
+  text-align: left;
   white-space: nowrap; /* Ensures text stays on one line */
 }
 
