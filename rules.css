@@ -18,7 +18,7 @@ body {
 .dropdown-button {
   background-color: #0975bd; /* Darker blue color for the dropdown button */
   color: white;
-  padding: 20px 30px; /* Adjust padding as needed */
+  padding: 30px 60px; /* Adjust padding as needed */
   border: none;
   cursor: pointer;
   width: 100%;
@@ -41,7 +41,7 @@ body {
 .dropdown-content button {
   background-color: #0975bd; /* Darker blue color for the dropdown options */
   color: black; /* Black color for the dropdown option text */
-  padding: 16px 26px; /* Adjust padding as needed */
+  padding: 10px 16px; /* Adjust padding as needed */
   text-decoration: none;
   display: block;
   width: 100%;
