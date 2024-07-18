@@ -134,6 +134,12 @@
     margin-top: 5px;
   }
 </style>
+
+<style>
+    .navbar-nav .nav-link.active {
+      color: white; /* Active link text color */
+    }
+</style>
     
 </head>
 
@@ -166,7 +172,16 @@
       </nav>
 
           
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Custom JavaScript for Dynamic Active Link -->
+    <script>
+      $(document).ready(function() {
+        $('.nav-link').click(function() {
+          $('.nav-link').removeClass('active'); // Remove 'active' class from all links
+          $(this).addClass('active'); // Add 'active' class to the clicked link
+        });
+      });
+    </script>
 
       
     
