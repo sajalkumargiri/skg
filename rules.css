@@ -10,55 +10,65 @@ body {
 }
 
 .filter-dropdown {
-  position: relative;
-  display: inline-block;
-  margin-right: 10px; /* Adjust margin as needed */
+    position: relative;
+    display: inline-block;
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-button {
-  background-color: #0975bd; /* Darker blue color for the dropdown button */
-  color: white;
-  padding: 12px 30px; /* Adjust padding as needed */
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
-  white-space: nowrap; /* Ensures text stays on one line */
+    background-color: #0975bd; /* Darker blue color for the dropdown button */
+    color: white;
+    padding: 12px 30px; /* Adjust padding as needed */
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap; /* Ensures text stays on one line */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #0975bd; /* Darker blue color for the dropdown content background */
-  color: black; /* Black color for the dropdown option text */
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-  max-height: 200px; /* Limit the height to avoid excessive size changes */
-  overflow-y: auto; /* Enable scrolling if content exceeds max height */
-  width: 100%;
-  border: 1px solid #ccc; /* Add border for better visibility */
+    display: none;
+    position: absolute;
+    background-color: #0975bd; /* Darker blue color for the dropdown content background */
+    color: black; /* Black color for the dropdown option text */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 200px; /* Limit the height to avoid excessive size changes */
+    overflow-y: auto; /* Enable scrolling if content exceeds max height */
+    width: 100%;
+    border: 1px solid #ccc; /* Add border for better visibility */
+    top: 100%; /* Position dropdown content below the button */
 }
 
 .dropdown-content button {
-  background-color: #0975bd; /* Darker blue color for the dropdown options */
-  color: black; /* Black color for the dropdown option text */
-  padding: 10px 16px; /* Adjust padding as needed */
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  text-align: left;
-  border: none;
-  border-bottom: 1px solid #ccc; /* Add bottom border between items */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+    background-color: #0975bd; /* Darker blue color for the dropdown options */
+    color: white; /* White text color for the dropdown option text */
+    padding: 10px 16px; /* Adjust padding as needed */
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #ccc; /* Add bottom border between items */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .dropdown-content button:last-child {
-  border-bottom: none; /* Remove bottom border from last item */
+    border-bottom: none; 
 }
 
+
 .dropdown-content button:hover {
-  background-color: #0975bd; /* Slightly darker shade of blue on hover */
-  color: #0975bd; /* White text color on hover */
+  background-color: #0975bd; 
+  color: #0975bd; 
 }
 
 p {
