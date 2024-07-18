@@ -414,8 +414,7 @@
 
 
         <hr class="light-90">
-
-        
+          
         <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
             <h4>Switching of electrochemical selectivity due to plasmonic field-induced dissociation</h4>
             <p>Author(s): F. M. Alcorn , <strong>S. K. Giri</strong>, M. Chattoraj , R. Nixon , G. C. Schatz, Prashant K. Jain</p>
@@ -426,16 +425,15 @@
                         <a href="./construction.html" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a>
                     </div>
                     <div class="col-md-1">
-                        <a class="showbibinfo btn btn-outline-secondary btn-lg mt-2">BibTex</a>
+                        <a id="showbibinfo14" class="btn btn-outline-secondary btn-lg mt-2">BibTex</a>
                     </div>
                 </div>
-                <div class="bibinfo expand-info">
+                <div id="bibinfo14" class="expand-info">
                     <p>Bib...</p>
                     <p>Year</p>
                 </div>
             </div>
         </div>
-          
         
         <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
             <h4>Laser pulse induced second- and third-harmonic generation of gold nanorods with real-time time-dependent density functional tight binding (RT-TDDFTB) method</h4>
@@ -448,10 +446,10 @@
                         <a href="https://arxiv.org/abs/2405.00913" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a>
                     </div>
                     <div class="col-md-1">
-                        <a class="showbibinfo btn btn-outline-secondary btn-lg mt-2">BibTex</a>
+                        <a id="showbibinfo13" class="btn btn-outline-secondary btn-lg mt-2">BibTex</a>
                     </div>
                 </div>
-                <div class="bibinfo expand-info">
+                <div id="bibinfo13" class="expand-info">
                     <p>Bib...</p>
                     <p>Year</p>
                 </div>
@@ -459,12 +457,14 @@
         </div>
         
 
+        
+
 
           <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
-              <h4> Plasmon-enhanced spectroscopy and photocatalysis</h4>
-              <p>Journal: <strong> arXiv:2402.13478 </strong> (2024) </p>
-              <p>Author(s): <strong> S. K. Giri</strong>, and G. C. Schatz </p>  
-              <a href="https://arxiv.org/abs/2402.13478" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
+            <h4> Plasmon-enhanced spectroscopy and photocatalysis</h4>
+            <p>Journal: <strong> arXiv:2402.13478 </strong> (2024) </p>
+            <p>Author(s): <strong> S. K. Giri</strong>, and G. C. Schatz </p>  
+            <a href="https://arxiv.org/abs/2402.13478" class="btn btn-outline-dark btn-lg mt-2" target="_blank">DOI</a> 
           </div>
 
           <div class="col-12 publication text-left" data-year="2023" data-area="ent">
@@ -587,15 +587,15 @@
     </footer>
 
           
-     <script>
-       document.addEventListener('DOMContentLoaded', function() {
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
           // Select all elements with class 'showbibinfo' (all BibTex buttons)
-          var bibButtons = document.querySelectorAll('.showbibinfo');
+          var bibButtons = document.querySelectorAll('.btn.btn-outline-secondary.btn-lg.mt-2');
       
           // Add click event listener to each BibTex button
           bibButtons.forEach(function(button) {
               button.addEventListener('click', function(event) {
-                  var bibinfo = this.parentNode.parentNode.nextElementSibling.querySelector('.bibinfo');
+                  var bibinfo = this.parentNode.nextElementSibling;
                   toggleVisibility(bibinfo);
                   event.stopPropagation(); // Prevent event from bubbling up
               });
@@ -604,7 +604,7 @@
           // Add a click event listener to the document to hide bibinfo if clicked outside
           document.addEventListener('click', function(event) {
               bibButtons.forEach(function(button) {
-                  var bibinfo = button.parentNode.parentNode.nextElementSibling.querySelector('.bibinfo');
+                  var bibinfo = button.parentNode.nextElementSibling;
                   if (!button.contains(event.target) && !bibinfo.contains(event.target)) {
                       bibinfo.style.display = 'none';
                   }
@@ -620,6 +620,7 @@
               }
           }
       });
+
     </script>
 
 
