@@ -601,7 +601,7 @@
           const target = event.target;
           if (target.tagName === "BUTTON") {
             const yearFilter = target.getAttribute("data-filter");
-            filterYearButton.textContent = `Research ▼ (${target.textContent})`;
+            filterYearButton.textContent = `Year ▼ (${target.textContent})`;
             filterYearButton.setAttribute("data-filter", yearFilter);
             filterYearOptions.style.display = "none";
             filterPublications();
