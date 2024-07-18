@@ -42,7 +42,7 @@ body {
 .dropdown-content button {
   background-color: #0975bd; /* Darker blue color for the dropdown options */
   color: black; /* Black color for the dropdown option text */
-  padding: 10px 16px; /* Adjust padding as needed */
+  padding: 10px 14px; /* Adjust padding as needed */
   text-decoration: none;
   display: block;
   width: 100%;
@@ -178,6 +178,10 @@ h3 span {
 }
 .btn-primary:hover {
   background-color: #fd5949;
+  border: 1px solid black;
+}
+.btn-outline-dark-back-blue {
+  background-color: #0975bd;
   border: 1px solid black;
 }
 .btn-outline-dark {
