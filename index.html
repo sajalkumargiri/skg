@@ -625,23 +625,38 @@
           
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var showButton = document.getElementById('showbibinfo');
-        var bibinfo = document.getElementById('bibinfo');
-    
-        showButton.addEventListener('click', function(event) {
-          if (bibinfo.style.display === 'block') {
-            bibinfo.style.display = 'none';
-          } else {
-            bibinfo.style.display = 'block';
-          }
-          event.stopPropagation(); // Prevent event from bubbling up
-        });
-    
-        document.addEventListener('click', function(event) {
-          if (!showButton.contains(event.target) && !bibinfo.contains(event.target)) {
-            bibinfo.style.display = 'none';
-          }
-        });
+          // Select all elements with class 'showbibinfo'
+          var showButtons = document.querySelectorAll('.showbibinfo');
+      
+          // Iterate over each 'showbibinfo' element
+          showButtons.forEach(function(button) {
+              // Add click event listener to each 'showbibinfo' button
+              button.addEventListener('click', function(event) {
+                  // Find the corresponding 'bibinfo' for this button
+                  var bibinfo = this.parentNode.parentNode.nextElementSibling;
+      
+                  // Toggle display of 'bibinfo'
+                  if (bibinfo.style.display === 'block') {
+                      bibinfo.style.display = 'none';
+                  } else {
+                      bibinfo.style.display = 'block';
+                  }
+      
+                  // Prevent event from bubbling up
+                  event.stopPropagation();
+              });
+          });
+      
+          // Click outside to close 'bibinfo'
+          document.addEventListener('click', function(event) {
+              showButtons.forEach(function(button) {
+                  var bibinfo = button.parentNode.parentNode.nextElementSibling;
+                  // Check if click is outside 'bibinfo' and 'showbibinfo'
+                  if (!button.contains(event.target) && !bibinfo.contains(event.target)) {
+                      bibinfo.style.display = 'none';
+                  }
+              });
+          });
       });
     </script>
 
