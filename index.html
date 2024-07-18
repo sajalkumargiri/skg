@@ -124,6 +124,16 @@
   }
 </style>
 
+<style>
+  .expand-info {
+    display: none;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+</style>
     
 </head>
 
@@ -405,11 +415,25 @@
 
           <hr class="light-90">
 
+
           <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
               <h4> Switching of electrochemical selectivity due to plasmonic field-induced dissociation</h4>
               <p>Author(s): F. M. Alcorn , <strong> S. K. Giri </strong>, M. Chattoraj , R. Nixon , G. C. Schatz, Prashant K. Jain </p>
+            
               <a href="./construction.html" class="btn btn-outline-dark btn-lg mt-2" >DOI</a> 
+            
+            <div class="container text-left mt-5">
+              <button id="showBibInfo" class="btn btn-outline-dark btn-lg mt-2">BibTex</button>
+              <div id="productInfo" class="expand-info">
+                <p>Bib...</p>
+                <p>Year</p>
+              </div>
+            </div>
+
+      
           </div>
+
+          
 
           <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
               <h4> Laser pulse induced second- and third-harmonic generation of gold nanorods with real-time time-dependent density functional tight binding (RT-TDDFTB) method</h4>
@@ -552,7 +576,23 @@
     </footer>
 
       
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var showButton = document.getElementById('showProductInfo');
+        var productInfo = document.getElementById('productInfo');
+    
+        showButton.addEventListener('click', function() {
+          productInfo.style.display = 'block';
+        });
+    
+        document.addEventListener('click', function(event) {
+          var isClickInside = showButton.contains(event.target) || productInfo.contains(event.target);
+          if (!isClickInside) {
+            productInfo.style.display = 'none';
+          }
+        });
+      });
+    </script>
 
 
     <script>
