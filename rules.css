@@ -180,8 +180,12 @@ h3 span {
   background-color: #fd5949;
   border: 1px solid black;
 }
-.btn-outline-dark-back-blue {
+.btn-blue {
   background-color: #0975bd;
+  border: 1px solid black;
+}
+.btn-purple {
+  background-color: purple;
   border: 1px solid black;
 }
 .btn-outline-dark {
