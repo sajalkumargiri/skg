@@ -22,7 +22,7 @@ body {
   border: none;
   cursor: pointer;
   width: 100%;
-  text-align: right;
+  text-align: left;
   white-space: nowrap; /* Ensures text stays on one line */
 }
 
@@ -46,7 +46,7 @@ body {
   text-decoration: none;
   display: block;
   width: 100%;
-  text-align: right;
+  text-align: left;
   border: none;
   border-bottom: 1px solid #ccc; /* Add bottom border between items */
   box-sizing: border-box; /* Include padding and border in element's total width and height */
