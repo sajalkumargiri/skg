@@ -135,18 +135,11 @@
     }
   </style>
 
-<style>
-    .navbar-nav .nav-link.active {
-      color: white; /* Active link text color */
+  <style>
+    .navbar-dark .navbar-nav .nav-link.active {
+      color: white; /* Change to white when active */
     }
-</style>
-
-<style>
-  .navbar-nav .nav-link.active {
-    background-color: #007bff; /* Active link background color */
-    color: #fff; /* Active link text color */
-  }
-</style>
+  </style>
     
 </head>
 
@@ -178,19 +171,6 @@
         </div>
       </div>
     </nav>
-
-          
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Custom JavaScript for Dynamic Active Link -->
-    <script>
-      $(document).ready(function() {
-        $('.nav-link').click(function() {
-          $('.nav-link').removeClass('active'); // Remove 'active' class from all links
-          $(this).addClass('active'); // Add 'active' class to the clicked link
-        });
-      });
-    </script>
-
       
     
 <!!==================================================================================================================================
@@ -707,31 +687,41 @@ and T. Goodson III</p>
 
 
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        var sections = document.querySelectorAll("section");
-        var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-      
-        window.addEventListener("scroll", function() {
-          var currentSection = "";
-      
-          sections.forEach(function(section) {
-            const sectionTop = section.offsetTop - 50; // Adjusted offset if needed
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-              currentSection = section.id;
-            }
-          });
-      
-          navLinks.forEach(function(link) {
-            link.classList.remove("active");
-            if (link.getAttribute("href").slice(1) === currentSection) {
-              link.classList.add("active");
+      $(document).ready(function() {
+        // Smooth scroll to anchor links
+        $('a.nav-link').on('click', function(event) {
+          var target = $(this.getAttribute('href'));
+          if (target.length) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+              scrollTop: target.offset().top
+            }, 1000);
+          }
+        });
+    
+        // Change active nav-link color on click and scroll
+        $(window).on('scroll', function() {
+          var scrollDistance = $(window).scrollTop();
+    
+          // Assign active class to nav-link based on scroll position
+          $('.section').each(function(i) {
+            if ($(this).position().top <= scrollDistance) {
+              $('.nav-item a.active').removeClass('active');
+              $('.nav-item a').eq(i).addClass('active');
             }
           });
         });
+    
+        // Change active nav-link color on click
+        $('.nav-item a').on('click', function() {
+          $('.nav-item a.active').removeClass('active');
+          $(this).addClass('active');
+        });
       });
     </script>
+
 
           
     <script>
