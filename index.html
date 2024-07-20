@@ -74,74 +74,82 @@
     }
   </style>
 
-<style>
+  <style>
+  
+    .filter-dropdown {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  
+    .filter-dropdown button {
+    display: inline-block; 
+    } 
+  
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      min-width: 160px;
+    }
+  
+    .dropdown-content button {
+      width: 100%;
+      padding: 10px;
+      text-align: left;
+      cursor: pointer;
+      border: none;
+      background-color: #fff;
+    }
+  
+    .dropdown-content button:hover {
+      background-color: #f9f9f9;
+    }
+  
+    .publication {
+      display: block;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+  
+    .publication h3 {
+      margin-top: 0;
+    }
+  
+    .publication p {
+      margin-bottom: 5px;
+    }
+  </style>
 
-  .filter-dropdown {
-    display: inline-block;
-    margin-right: 10px;
-  }
-
-  .filter-dropdown button {
-  display: inline-block; 
-  } 
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    min-width: 160px;
-  }
-
-  .dropdown-content button {
-    width: 100%;
-    padding: 10px;
-    text-align: left;
-    cursor: pointer;
-    border: none;
-    background-color: #fff;
-  }
-
-  .dropdown-content button:hover {
-    background-color: #f9f9f9;
-  }
-
-  .publication {
-    display: block;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-
-  .publication h3 {
-    margin-top: 0;
-  }
-
-  .publication p {
-    margin-bottom: 5px;
-  }
-</style>
-
-<style>
-  .expand-info {
-    display: none;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 5px;
-  }
-</style>
+  <style>
+    .expand-info {
+      display: none;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 5px;
+    }
+  </style>
 
 <style>
     .navbar-nav .nav-link.active {
       color: white; /* Active link text color */
     }
 </style>
+
+<style>
+  .navbar-nav .nav-link.active {
+    background-color: #007bff; /* Active link background color */
+    color: #fff; /* Active link text color */
+  }
+</style>
     
 </head>
+
 
 
   
@@ -151,25 +159,25 @@
     <div id="top_sec">
       <!-- NAVIGATION -->
       <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#research"><i class="fa fa-fw fa-laptop"></i> Research</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pub"><i class="fa fa-fw fa-book"></i> Publications</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact_me"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a id="nav-home" class="nav-link active" href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a id="nav-research" class="nav-link" href="#research"><i class="fa fa-fw fa-laptop"></i> Research</a>
+            </li>
+            <li class="nav-item">
+              <a id="nav-publications" class="nav-link" href="#publications"><i class="fa fa-fw fa-book"></i> Publications</a>
+            </li>
+            <li class="nav-item">
+              <a id="nav-contact" class="nav-link" href="#contact_me"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
           
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -187,7 +195,7 @@
     
 <!!==================================================================================================================================
     <!--Home -->
-    <div class="white">
+    <div class="white" id="home">
       <div class="container-fluid">
         <div class="row text-center">
           <div class="col-12">
@@ -696,6 +704,34 @@ and T. Goodson III</p>
         </div>
       </div>
     </footer>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        var sections = document.querySelectorAll("section");
+        var navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      
+        window.addEventListener("scroll", function() {
+          var currentSection = "";
+      
+          sections.forEach(function(section) {
+            const sectionTop = section.offsetTop - 50; // Adjusted offset if needed
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+              currentSection = section.id;
+            }
+          });
+      
+          navLinks.forEach(function(link) {
+            link.classList.remove("active");
+            if (link.getAttribute("href").slice(1) === currentSection) {
+              link.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
 
           
     <script>
