@@ -165,7 +165,7 @@
                 <a id="nav-publications" class="nav-link" href="#publications"><i class="fa fa-fw fa-book"></i> Publications</a>
               </li>
               <li class="nav-item">
-                <a id="nav-contact_me" class="nav-link" href="#contact_me"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+                <a id="nav-contact" class="nav-link" href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
               </li>
             </ul>
           </div>
@@ -649,7 +649,7 @@ and T. Goodson III</p>
     <!!================================================================================================
     <!--  FOOTER  -->
     <footer>
-      <div class="container-fluid" id="contact_me">
+      <div class="container-fluid" id="contact">
         <div class="row text-center">
           <div class="col-md-4" style="padding-bottom: 0;">
             <p>
@@ -695,11 +695,33 @@ and T. Goodson III</p>
           if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
+            var offset = $(hash).offset().top;
             $('html, body').animate({
-              scrollTop: $(hash).offset().top
+              scrollTop: offset
             }, 800, function(){
               window.location.hash = hash;
             });
+          }
+        });
+    
+        // Smooth scrolling on arrow click (optional)
+        $('.arrow-up').on('click', function() {
+          $('html, body').animate({
+            scrollTop: 0
+          }, 800);
+        });
+    
+        // Smooth scrolling on arrow click (optional)
+        $('.arrow-down').on('click', function() {
+          var windowHeight = $(window).height();
+          var documentHeight = $(document).height();
+          var scrollPos = $(document).scrollTop();
+          var scrollEnd = documentHeight - windowHeight;
+          
+          if (scrollPos < scrollEnd) {
+            $('html, body').animate({
+              scrollTop: windowHeight
+            }, 800);
           }
         });
     
@@ -719,6 +741,7 @@ and T. Goodson III</p>
         });
       });
     </script>
+
 
 
 
