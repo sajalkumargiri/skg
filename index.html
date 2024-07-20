@@ -687,7 +687,7 @@ and T. Goodson III</p>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
         // Smooth scrolling when clicking on navigation links
@@ -698,8 +698,12 @@ and T. Goodson III</p>
             var offset = $(hash).offset().top;
             $('html, body').animate({
               scrollTop: offset
-            }, 800, function(){
-              window.location.hash = hash;
+            }, {
+              duration: 1000, // Animation duration in milliseconds
+              easing: 'linear', // Linear easing for constant speed
+              complete: function() {
+                window.location.hash = hash;
+              }
             });
           }
         });
@@ -708,7 +712,10 @@ and T. Goodson III</p>
         $('.arrow-up').on('click', function() {
           $('html, body').animate({
             scrollTop: 0
-          }, 800);
+          }, {
+            duration: 1000,
+            easing: 'linear'
+          });
         });
     
         // Smooth scrolling on arrow click (optional)
@@ -720,8 +727,11 @@ and T. Goodson III</p>
           
           if (scrollPos < scrollEnd) {
             $('html, body').animate({
-              scrollTop: windowHeight
-            }, 800);
+              scrollTop: scrollPos + windowHeight
+            }, {
+              duration: 1000,
+              easing: 'linear'
+            });
           }
         });
     
@@ -742,10 +752,7 @@ and T. Goodson III</p>
       });
     </script>
 
-
-
-
-          
+    
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           // Select all elements with class 'showbibinfo' (all BibTex buttons)
