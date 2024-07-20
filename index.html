@@ -686,8 +686,7 @@ and T. Goodson III</p>
     </footer>
 
 
-
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
         // Smooth scrolling when clicking on navigation links
@@ -696,42 +695,34 @@ and T. Goodson III</p>
             event.preventDefault();
             var hash = this.hash;
             var offset = $(hash).offset().top;
+            var scrollDuration = 500; // Set the duration to 500 milliseconds (0.5 seconds)
             $('html, body').animate({
               scrollTop: offset
-            }, {
-              duration: 1000, // Animation duration in milliseconds
-              easing: 'linear', // Linear easing for constant speed
-              complete: function() {
-                window.location.hash = hash;
-              }
+            }, scrollDuration, 'linear', function() {
+              window.location.hash = hash;
             });
           }
         });
     
         // Smooth scrolling on arrow click (optional)
         $('.arrow-up').on('click', function() {
+          var scrollDuration = 500; // Set the duration to 500 milliseconds (0.5 seconds)
           $('html, body').animate({
             scrollTop: 0
-          }, {
-            duration: 1000,
-            easing: 'linear'
-          });
+          }, scrollDuration, 'linear');
         });
     
-        // Smooth scrolling on arrow click (optional)
         $('.arrow-down').on('click', function() {
           var windowHeight = $(window).height();
           var documentHeight = $(document).height();
           var scrollPos = $(document).scrollTop();
           var scrollEnd = documentHeight - windowHeight;
-          
+    
+          var scrollDuration = 500; // Set the duration to 500 milliseconds (0.5 seconds)
           if (scrollPos < scrollEnd) {
             $('html, body').animate({
               scrollTop: scrollPos + windowHeight
-            }, {
-              duration: 1000,
-              easing: 'linear'
-            });
+            }, scrollDuration, 'linear');
           }
         });
     
@@ -751,6 +742,7 @@ and T. Goodson III</p>
         });
       });
     </script>
+
 
     
     <script>
