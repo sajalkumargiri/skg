@@ -901,29 +901,37 @@ and T. Goodson III</p>
     </script>
 
 
-      
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+<script>
+  //Get the button
+  var mybutton = document.getElementById("myBtn");
+  
+  // Check scroll position on scroll and page load
+  window.addEventListener('scroll', scrollFunction);
+  window.addEventListener('load', scrollFunction);
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-    <script>
-      //Get the button
-      var mybutton = document.getElementById("myBtn");
-      
-      window.onscroll = function() {scrollFunction()};
-      
-      function scrollFunction() {
-        if (document.body.scrollTop >= 0 || document.documentElement.scrollTop >= 0) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-      
-      // When the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
+  function scrollFunction() {
+    // Check both document.body.scrollTop and document.documentElement.scrollTop
+    // to cover all browsers
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    // For smooth scrolling to the top, use window.scrollTo()
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Immediately hide the button after clicking
+    mybutton.style.display = "none";
+  }
+</script>
+
+
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
