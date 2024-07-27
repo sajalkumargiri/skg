@@ -725,8 +725,7 @@ and T. Goodson III</p>
         </div>
       </div>
     </footer>
-
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
@@ -754,38 +753,31 @@ and T. Goodson III</p>
           }
         });
     
-        // Smooth scrolling on arrow click (optional)
+        // Smooth scrolling on arrow click
         $('.arrow-up').on('click', function() {
           var scrollDuration = 200; // Duration for smooth scrolling
           $('html, body').stop().animate({
-            scrollTop: 0
+            scrollTop: $(window).scrollTop() - $(window).height()
           }, scrollDuration, 'linear');
         });
     
         $('.arrow-down').on('click', function() {
-          var windowHeight = $(window).height();
-          var documentHeight = $(document).height();
-          var scrollPos = $(document).scrollTop();
-          var scrollEnd = documentHeight - windowHeight;
-    
           var scrollDuration = 200; // Duration for smooth scrolling
-          if (scrollPos < scrollEnd) {
-            $('html, body').stop().animate({
-              scrollTop: scrollPos + windowHeight
-            }, scrollDuration, 'linear');
-          }
+          $('html, body').stop().animate({
+            scrollTop: $(window).scrollTop() + $(window).height()
+          }, scrollDuration, 'linear');
         });
     
         // Update navigation link color based on scroll position
         $(document).on('scroll', function() {
           var scrollPos = $(document).scrollTop();
-          $('.nav-link').each(function() {
+          $('a.nav-link').each(function() {
             var currLink = $(this);
             var refElement = $(currLink.attr("href"));
     
             // Add active class if link's target section is in view
-            if (refElement.length && refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-              $('.nav-link').removeClass("active");
+            if (refElement.length && refElement.position().top <= scrollPos && refElement.position().top + refElement.outerHeight() > scrollPos) {
+              $('a.nav-link').removeClass("active");
               currLink.addClass("active");
             }
           });
@@ -796,10 +788,10 @@ and T. Goodson III</p>
           var initialHash = window.location.hash;
           $('a.nav-link').removeClass('active');
           $('a.nav-link[href="' + initialHash + '"]').addClass('active');
+          $('html, body').scrollTop($(initialHash).offset().top); // Ensure correct scroll position
         }
       });
     </script>
-
 
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
