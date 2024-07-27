@@ -738,7 +738,6 @@ and T. Goodson III</p>
         function applyActiveClass() {
           var scrollPos = $(document).scrollTop();
           var windowHeight = $(window).height();
-          var documentHeight = $(document).height();
           var currentActive = null;
     
           $('a.nav-link').each(function() {
@@ -749,8 +748,9 @@ and T. Goodson III</p>
               var elementTop = refElement.offset().top;
               var elementBottom = elementTop + refElement.outerHeight();
     
+              // Check if the section is within the viewport
               if (elementTop <= scrollPos + windowHeight / 2 &&
-                  (elementBottom > scrollPos || scrollPos + windowHeight >= documentHeight)) {
+                  elementBottom > scrollPos + windowHeight / 2) {
                 currentActive = currLink;
               }
             }
@@ -777,6 +777,7 @@ and T. Goodson III</p>
             if (callback) callback();
           });
     
+          // Optionally update the URL hash
           window.location.hash = hash;
         }
     
@@ -784,9 +785,13 @@ and T. Goodson III</p>
           event.preventDefault();
     
           var hash = this.hash;
-          scrollToElement(hash, function() {
-            applyActiveClass();
-          });
+    
+          // Directly set active class on click
+          $('a.nav-link').removeClass('active');
+          $(this).addClass('active');
+    
+          // Smoothly scroll to the target section
+          scrollToElement(hash);
         });
     
         $('.arrow-up').on('click', function() {
@@ -824,6 +829,7 @@ and T. Goodson III</p>
           }
         });
     
+        // Check if there is an initial hash in the URL and apply the active class
         if (window.location.hash) {
           var initialHash = window.location.hash;
           $('a.nav-link').removeClass('active');
@@ -832,6 +838,7 @@ and T. Goodson III</p>
         }
       });
     </script>
+    
 
 
 
