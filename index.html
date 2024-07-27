@@ -726,15 +726,15 @@ and T. Goodson III</p>
       </div>
     </footer>
 
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
-        // Smooth scrolling when clicking on navigation links
+        // Smooth scrolling and active class handling when clicking on navigation links
         $('a.nav-link').on('click', function(event) {
-          // Prevent default anchor click behavior
+          // Prevent default anchor behavior
           if (this.hash !== "") {
             event.preventDefault();
+            
             var hash = this.hash;
             var offset = $(hash).offset().top;
             var scrollDuration = 200; // Set the duration to 200 milliseconds
@@ -781,9 +781,9 @@ and T. Goodson III</p>
           $('.nav-link').each(function() {
             var currLink = $(this);
             var refElement = $(currLink.attr("href"));
-    
+            
             // Add active class if link's target section is in view
-            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            if (refElement.length && refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
               $('.nav-link').removeClass("active");
               currLink.addClass("active");
             } else {
