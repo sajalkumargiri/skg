@@ -141,7 +141,8 @@
       text-decoration: none;
     }
     
-    .nav-link.active, .nav-link.clicked {
+    /* Active color for the link */
+    .nav-link.active {
       color: #f00; /* Active color */
     }
   </style>
@@ -732,25 +733,27 @@ and T. Goodson III</p>
         // Smooth scrolling when clicking on navigation links
         $('a.nav-link').on('click', function(event) {
           if (this.hash !== "") {
-            event.preventDefault();
+            event.preventDefault(); // Prevent default anchor behavior
+    
             var hash = this.hash;
             var offset = $(hash).offset().top;
-            var scrollDuration = 200; // Set the duration to 200 milliseconds
+            var scrollDuration = 200; // Duration for scroll animation
+    
             $('html, body').animate({
               scrollTop: offset
             }, scrollDuration, 'linear', function() {
               window.location.hash = hash;
             });
     
-            // Add 'clicked' class to the clicked link
-            $('a.nav-link').removeClass('clicked'); // Remove 'clicked' from all links
-            $(this).addClass('clicked'); // Add 'clicked' to the current link
+            // Add 'active' class to the clicked link and remove from others
+            $('a.nav-link').removeClass('active');
+            $(this).addClass('active');
           }
         });
     
         // Smooth scrolling on arrow click (optional)
         $('.arrow-up').on('click', function() {
-          var scrollDuration = 200; // Set the duration to 200 milliseconds
+          var scrollDuration = 200; // Duration for scroll animation
           $('html, body').animate({
             scrollTop: 0
           }, scrollDuration, 'linear');
@@ -762,7 +765,7 @@ and T. Goodson III</p>
           var scrollPos = $(document).scrollTop();
           var scrollEnd = documentHeight - windowHeight;
     
-          var scrollDuration = 200; // Set the duration to 200 milliseconds
+          var scrollDuration = 200; // Duration for scroll animation
           if (scrollPos < scrollEnd) {
             $('html, body').animate({
               scrollTop: scrollPos + windowHeight
@@ -786,6 +789,7 @@ and T. Goodson III</p>
         });
       });
     </script>
+
 
 
 
