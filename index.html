@@ -135,9 +135,14 @@
     }
   </style>
 
-  <style>
-    .navbar-dark .navbar-nav .nav-link.active {
-      color: white; /* Change to white when active */
+  </style>
+    .nav-link {
+      color: #000; /* Default color */
+      text-decoration: none;
+    }
+    
+    .nav-link.active, .nav-link.clicked {
+      color: #f00; /* Active color */
     }
   </style>
     
@@ -730,18 +735,22 @@ and T. Goodson III</p>
             event.preventDefault();
             var hash = this.hash;
             var offset = $(hash).offset().top;
-            var scrollDuration = 200; // Set the duration to 500 milliseconds (0.5 seconds)
+            var scrollDuration = 200; // Set the duration to 200 milliseconds
             $('html, body').animate({
               scrollTop: offset
             }, scrollDuration, 'linear', function() {
               window.location.hash = hash;
             });
+    
+            // Add 'clicked' class to the clicked link
+            $('a.nav-link').removeClass('clicked'); // Remove 'clicked' from all links
+            $(this).addClass('clicked'); // Add 'clicked' to the current link
           }
         });
     
         // Smooth scrolling on arrow click (optional)
         $('.arrow-up').on('click', function() {
-          var scrollDuration = 200; // Set the duration to 500 milliseconds (0.5 seconds)
+          var scrollDuration = 200; // Set the duration to 200 milliseconds
           $('html, body').animate({
             scrollTop: 0
           }, scrollDuration, 'linear');
@@ -753,7 +762,7 @@ and T. Goodson III</p>
           var scrollPos = $(document).scrollTop();
           var scrollEnd = documentHeight - windowHeight;
     
-          var scrollDuration = 200; // Set the duration to 500 milliseconds (0.5 seconds)
+          var scrollDuration = 200; // Set the duration to 200 milliseconds
           if (scrollPos < scrollEnd) {
             $('html, body').animate({
               scrollTop: scrollPos + windowHeight
@@ -777,6 +786,7 @@ and T. Goodson III</p>
         });
       });
     </script>
+
 
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
