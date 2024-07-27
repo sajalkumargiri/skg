@@ -737,10 +737,10 @@ and T. Goodson III</p>
             
             var hash = this.hash;
             var offset = $(hash).offset().top;
-            var scrollDuration = 200; // Set the duration to 200 milliseconds
+            var scrollDuration = 200; // Duration for smooth scrolling
     
             // Smooth scroll to the target section
-            $('html, body').animate({
+            $('html, body').stop().animate({
               scrollTop: offset
             }, scrollDuration, 'linear');
     
@@ -748,15 +748,15 @@ and T. Goodson III</p>
             $('a.nav-link').removeClass('active');
             $(this).addClass('active');
             
-            // Update URL hash
+            // Update URL hash (optional, depending on your needs)
             window.location.hash = hash;
           }
         });
     
         // Smooth scrolling on arrow click (optional)
         $('.arrow-up').on('click', function() {
-          var scrollDuration = 200; // Set the duration to 200 milliseconds
-          $('html, body').animate({
+          var scrollDuration = 200; // Duration for smooth scrolling
+          $('html, body').stop().animate({
             scrollTop: 0
           }, scrollDuration, 'linear');
         });
@@ -767,9 +767,9 @@ and T. Goodson III</p>
           var scrollPos = $(document).scrollTop();
           var scrollEnd = documentHeight - windowHeight;
     
-          var scrollDuration = 200; // Set the duration to 200 milliseconds
+          var scrollDuration = 200; // Duration for smooth scrolling
           if (scrollPos < scrollEnd) {
-            $('html, body').animate({
+            $('html, body').stop().animate({
               scrollTop: scrollPos + windowHeight
             }, scrollDuration, 'linear');
           }
@@ -781,13 +781,11 @@ and T. Goodson III</p>
           $('.nav-link').each(function() {
             var currLink = $(this);
             var refElement = $(currLink.attr("href"));
-            
+    
             // Add active class if link's target section is in view
             if (refElement.length && refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
               $('.nav-link').removeClass("active");
               currLink.addClass("active");
-            } else {
-              currLink.removeClass("active");
             }
           });
         });
@@ -800,6 +798,7 @@ and T. Goodson III</p>
         }
       });
     </script>
+
 
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
