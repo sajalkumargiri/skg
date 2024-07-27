@@ -729,104 +729,109 @@ and T. Goodson III</p>
 
 
 
-      
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      var isScrolling = false; // Flag to prevent multiple simultaneous animations
-      
-      function applyActiveClass() {
-        var scrollPos = $(document).scrollTop();
-        var windowHeight = $(window).height();
-        var documentHeight = $(document).height();
-        
-        $('a.nav-link').each(function() {
-          var currLink = $(this);
-          var refElement = $(currLink.attr("href"));
-  
-          if (refElement.length) {
-            var elementTop = refElement.position().top;
-            var elementBottom = elementTop + refElement.outerHeight();
-  
-            if (elementTop <= scrollPos + windowHeight / 2 &&
-                (elementBottom > scrollPos || scrollPos + windowHeight >= documentHeight)) {
-              $('a.nav-link').removeClass("active");
-              currLink.addClass("active");
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var isScrolling = false; // Flag to prevent multiple simultaneous animations
+        var scrollTimeout; // To debounce scroll events
+    
+        function applyActiveClass() {
+          var scrollPos = $(document).scrollTop();
+          var windowHeight = $(window).height();
+          var documentHeight = $(document).height();
+          var currentActive = null;
+    
+          $('a.nav-link').each(function() {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+    
+            if (refElement.length) {
+              var elementTop = refElement.offset().top;
+              var elementBottom = elementTop + refElement.outerHeight();
+    
+              if (elementTop <= scrollPos + windowHeight / 2 &&
+                  (elementBottom > scrollPos || scrollPos + windowHeight >= documentHeight)) {
+                currentActive = currLink;
+              }
             }
+          });
+    
+          if (currentActive) {
+            $('a.nav-link').removeClass("active");
+            currentActive.addClass("active");
+          }
+        }
+    
+        function scrollToElement(hash, callback) {
+          if (isScrolling) return;
+    
+          var offset = $(hash).offset().top;
+          var scrollDuration = 400; // Adjust duration as needed
+    
+          isScrolling = true;
+    
+          $('html, body').stop().animate({
+            scrollTop: offset
+          }, scrollDuration, 'swing', function() {
+            isScrolling = false;
+            if (callback) callback();
+          });
+    
+          window.location.hash = hash;
+        }
+    
+        $('a.nav-link').on('click', function(event) {
+          event.preventDefault();
+    
+          var hash = this.hash;
+          scrollToElement(hash, function() {
+            applyActiveClass();
+          });
+        });
+    
+        $('.arrow-up').on('click', function() {
+          if (isScrolling) return;
+    
+          var scrollDuration = 400;
+          isScrolling = true;
+    
+          $('html, body').stop().animate({
+            scrollTop: $(window).scrollTop() - $(window).height()
+          }, scrollDuration, 'swing', function() {
+            isScrolling = false;
+            applyActiveClass();
+          });
+        });
+    
+        $('.arrow-down').on('click', function() {
+          if (isScrolling) return;
+    
+          var scrollDuration = 400;
+          isScrolling = true;
+    
+          $('html, body').stop().animate({
+            scrollTop: $(window).scrollTop() + $(window).height()
+          }, scrollDuration, 'swing', function() {
+            isScrolling = false;
+            applyActiveClass();
+          });
+        });
+    
+        $(document).on('scroll', function() {
+          if (!isScrolling) {
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(applyActiveClass, 100); // Debounce scroll event
           }
         });
-      }
-  
-      function scrollToElement(hash, callback) {
-        if (isScrolling) return;
-        
-        var offset = $(hash).offset().top;
-        var scrollDuration = 400; // Adjust duration as needed
-  
-        isScrolling = true;
-  
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, scrollDuration, 'swing', function() {
-          isScrolling = false;
-          if (callback) callback();
-        });
-  
-        window.location.hash = hash;
-      }
-  
-      $('a.nav-link').on('click', function(event) {
-        event.preventDefault();
-  
-        var hash = this.hash;
-        scrollToElement(hash, function() {
-          applyActiveClass();
-        });
-      });
-  
-      $('.arrow-up').on('click', function() {
-        if (isScrolling) return;
-  
-        var scrollDuration = 400;
-        isScrolling = true;
-  
-        $('html, body').stop().animate({
-          scrollTop: $(window).scrollTop() - $(window).height()
-        }, scrollDuration, 'swing', function() {
-          isScrolling = false;
-          applyActiveClass();
-        });
-      });
-  
-      $('.arrow-down').on('click', function() {
-        if (isScrolling) return;
-  
-        var scrollDuration = 400;
-        isScrolling = true;
-  
-        $('html, body').stop().animate({
-          scrollTop: $(window).scrollTop() + $(window).height()
-        }, scrollDuration, 'swing', function() {
-          isScrolling = false;
-          applyActiveClass();
-        });
-      });
-  
-      $(document).on('scroll', function() {
-        if (!isScrolling) {
-          applyActiveClass();
+    
+        if (window.location.hash) {
+          var initialHash = window.location.hash;
+          $('a.nav-link').removeClass('active');
+          $('a.nav-link[href="' + initialHash + '"]').addClass('active');
+          scrollToElement(initialHash);
         }
       });
-  
-      if (window.location.hash) {
-        var initialHash = window.location.hash;
-        $('a.nav-link').removeClass('active');
-        $('a.nav-link[href="' + initialHash + '"]').addClass('active');
-        scrollToElement(initialHash);
-      }
-    });
-  </script>
+    </script>
 
 
 
