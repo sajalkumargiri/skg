@@ -735,7 +735,8 @@ and T. Goodson III</p>
           var scrollPos = $(document).scrollTop();
           var windowHeight = $(window).height();
           var documentHeight = $(document).height();
-          
+          var activeSet = false; // To track if an active class has been set
+    
           $('a.nav-link').each(function() {
             var currLink = $(this);
             var refElement = $(currLink.attr("href"));
@@ -745,11 +746,14 @@ and T. Goodson III</p>
               var elementTop = refElement.position().top;
               var elementBottom = elementTop + refElement.outerHeight();
     
-              // Check if the section is within the viewport or the user has scrolled near the end of the page
+              // Check if the section is within the viewport or near the end of the page
               if (elementTop <= scrollPos + windowHeight / 2 &&
                   (elementBottom > scrollPos || scrollPos + windowHeight >= documentHeight)) {
-                $('a.nav-link').removeClass("active");
-                currLink.addClass("active");
+                if (!activeSet) { // Set the active class only if none is set yet
+                  $('a.nav-link').removeClass("active");
+                  currLink.addClass("active");
+                  activeSet = true; // Mark that the active class has been set
+                }
               }
             }
           });
@@ -831,6 +835,7 @@ and T. Goodson III</p>
         }
       });
     </script>
+
 
 
 
