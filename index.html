@@ -726,11 +726,24 @@ and T. Goodson III</p>
       </div>
     </footer>
 
-      
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
         var isScrolling = false; // Flag to prevent multiple simultaneous animations
+    
+        function applyActiveClass() {
+          var scrollPos = $(document).scrollTop();
+          $('a.nav-link').each(function() {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+    
+            // Add active class if link's target section is in view
+            if (refElement.length && refElement.position().top <= scrollPos + 50 && refElement.position().top + refElement.outerHeight() > scrollPos) {
+              $('a.nav-link').removeClass("active");
+              currLink.addClass("active");
+            }
+          });
+        }
     
         // Smooth scrolling and active class handling when clicking on navigation links
         $('a.nav-link').on('click', function(event) {
@@ -739,26 +752,25 @@ and T. Goodson III</p>
           // Prevent default anchor behavior
           if (this.hash !== "") {
             event.preventDefault();
-            
+    
             var hash = this.hash;
             var offset = $(hash).offset().top;
             var scrollDuration = 200; // Duration for smooth scrolling
     
             // Set the flag to indicate scrolling is in progress
             isScrolling = true;
-            
+    
             // Smooth scroll to the target section
             $('html, body').stop().animate({
               scrollTop: offset
             }, scrollDuration, 'linear', function() {
               // Reset the flag after animation completes
               isScrolling = false;
+              
+              // Apply the active class after scrolling is complete
+              applyActiveClass();
             });
     
-            // Add 'active' class to the clicked link and remove from others
-            $('a.nav-link').removeClass('active');
-            $(this).addClass('active');
-            
             // Update URL hash (optional, depending on your needs)
             window.location.hash = hash;
           }
@@ -775,6 +787,7 @@ and T. Goodson III</p>
             scrollTop: $(window).scrollTop() - $(window).height()
           }, scrollDuration, 'linear', function() {
             isScrolling = false;
+            applyActiveClass();
           });
         });
     
@@ -788,22 +801,15 @@ and T. Goodson III</p>
             scrollTop: $(window).scrollTop() + $(window).height()
           }, scrollDuration, 'linear', function() {
             isScrolling = false;
+            applyActiveClass();
           });
         });
     
         // Update navigation link color based on scroll position
         $(document).on('scroll', function() {
-          var scrollPos = $(document).scrollTop();
-          $('a.nav-link').each(function() {
-            var currLink = $(this);
-            var refElement = $(currLink.attr("href"));
-    
-            // Add active class if link's target section is in view
-            if (refElement.length && refElement.position().top <= scrollPos && refElement.position().top + refElement.outerHeight() > scrollPos) {
-              $('a.nav-link').removeClass("active");
-              currLink.addClass("active");
-            }
-          });
+          if (!isScrolling) {
+            applyActiveClass();
+          }
         });
     
         // Highlight the link that corresponds to the current URL hash on page load
