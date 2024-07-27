@@ -391,6 +391,38 @@
           <div class="col-12">
             <h1 class="font-1">Publications</h1>
           </div>
+          
+          <div class="col-12 text-left">
+            <h5> Sort by Year || Research</h5>
+          </div>
+          
+          <div class="col-md-3 filter-dropdown">
+            <button id="filter-year-btn" class="dropdown-button  btn-blue">Year ▼ (All)</button>
+            <div class="dropdown-content" id="filter-year-options">
+              <button data-filter="all">All</button>
+              <button data-filter="2024">2024</button>
+              <button data-filter="2023">2023</button>
+              <button data-filter="2022">2022</button>
+              <button data-filter="2021">2021</button>
+              <button data-filter="2020">2020</button>
+              <button data-filter="2019">2019</button>
+              <button data-filter="2018">2018</button>
+              <button data-filter="2017">2017</button>
+            </div>
+          </div>
+        
+          <div class="col-md-3 filter-dropdown">
+            <button id="filter-area-btn" class="dropdown-button  btn-blue">Research ▼ (All) </button>
+            <div class="dropdown-content" id="filter-area-options">
+              <button data-filter="all">All</button>
+              <button data-filter="ml">ML</button>
+              <button data-filter="plasmon">Plasmon</button>
+              <button data-filter="ent">Entanglement</button>
+              <button data-filter="transport">Transport</button>
+              <button data-filter="ultrafast">Ultrafast</button>
+            </div>
+          </div>
+
 
         <hr class="light-90">
           
@@ -693,12 +725,17 @@ and T. Goodson III</p>
         </div>
       </div>
     </footer>
-    
+
+      
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
+        var isScrolling = false; // Flag to prevent multiple simultaneous animations
+    
         // Smooth scrolling and active class handling when clicking on navigation links
         $('a.nav-link').on('click', function(event) {
+          if (isScrolling) return; // Prevent action if scrolling is in progress
+    
           // Prevent default anchor behavior
           if (this.hash !== "") {
             event.preventDefault();
@@ -707,10 +744,16 @@ and T. Goodson III</p>
             var offset = $(hash).offset().top;
             var scrollDuration = 200; // Duration for smooth scrolling
     
+            // Set the flag to indicate scrolling is in progress
+            isScrolling = true;
+            
             // Smooth scroll to the target section
             $('html, body').stop().animate({
               scrollTop: offset
-            }, scrollDuration, 'linear');
+            }, scrollDuration, 'linear', function() {
+              // Reset the flag after animation completes
+              isScrolling = false;
+            });
     
             // Add 'active' class to the clicked link and remove from others
             $('a.nav-link').removeClass('active');
@@ -723,17 +766,29 @@ and T. Goodson III</p>
     
         // Smooth scrolling on arrow click
         $('.arrow-up').on('click', function() {
+          if (isScrolling) return; // Prevent action if scrolling is in progress
+    
           var scrollDuration = 200; // Duration for smooth scrolling
+          isScrolling = true;
+    
           $('html, body').stop().animate({
             scrollTop: $(window).scrollTop() - $(window).height()
-          }, scrollDuration, 'linear');
+          }, scrollDuration, 'linear', function() {
+            isScrolling = false;
+          });
         });
     
         $('.arrow-down').on('click', function() {
+          if (isScrolling) return; // Prevent action if scrolling is in progress
+    
           var scrollDuration = 200; // Duration for smooth scrolling
+          isScrolling = true;
+    
           $('html, body').stop().animate({
             scrollTop: $(window).scrollTop() + $(window).height()
-          }, scrollDuration, 'linear');
+          }, scrollDuration, 'linear', function() {
+            isScrolling = false;
+          });
         });
     
         // Update navigation link color based on scroll position
