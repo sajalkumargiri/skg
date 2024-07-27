@@ -733,14 +733,24 @@ and T. Goodson III</p>
     
         function applyActiveClass() {
           var scrollPos = $(document).scrollTop();
+          var windowHeight = $(window).height();
+          var documentHeight = $(document).height();
+          
           $('a.nav-link').each(function() {
             var currLink = $(this);
             var refElement = $(currLink.attr("href"));
     
-            // Add active class if link's target section is in view
-            if (refElement.length && refElement.position().top <= scrollPos + 50 && refElement.position().top + refElement.outerHeight() > scrollPos) {
-              $('a.nav-link').removeClass("active");
-              currLink.addClass("active");
+            // Check if the current link's section is in view
+            if (refElement.length) {
+              var elementTop = refElement.position().top;
+              var elementBottom = elementTop + refElement.outerHeight();
+    
+              // Check if the section is within the viewport or the user has scrolled near the end of the page
+              if (elementTop <= scrollPos + windowHeight / 2 &&
+                  (elementBottom > scrollPos || scrollPos + windowHeight >= documentHeight)) {
+                $('a.nav-link').removeClass("active");
+                currLink.addClass("active");
+              }
             }
           });
         }
@@ -766,7 +776,7 @@ and T. Goodson III</p>
             }, scrollDuration, 'linear', function() {
               // Reset the flag after animation completes
               isScrolling = false;
-              
+    
               // Apply the active class after scrolling is complete
               applyActiveClass();
             });
@@ -821,6 +831,7 @@ and T. Goodson III</p>
         }
       });
     </script>
+
 
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
