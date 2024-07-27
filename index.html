@@ -726,6 +726,11 @@ and T. Goodson III</p>
       </div>
     </footer>
 
+
+
+
+      
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
@@ -743,11 +748,11 @@ and T. Goodson III</p>
     
             // Check if the current link's section is in view
             if (refElement.length) {
-              var elementTop = refElement.position().top;
+              var elementTop = refElement.offset().top;
               var elementBottom = elementTop + refElement.outerHeight();
     
-              // Check if the section is within the viewport or near the end of the page
-              if (elementTop <= scrollPos + windowHeight / 2 &&
+              // Determine if the element is in view or if we are at the end of the document
+              if (elementTop <= scrollPos + windowHeight / 2 && 
                   (elementBottom > scrollPos || scrollPos + windowHeight >= documentHeight)) {
                 if (!activeSet) { // Set the active class only if none is set yet
                   $('a.nav-link').removeClass("active");
