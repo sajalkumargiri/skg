@@ -732,28 +732,30 @@ and T. Goodson III</p>
       $(document).ready(function() {
         // Smooth scrolling when clicking on navigation links
         $('a.nav-link').on('click', function(event) {
+          // Prevent default anchor click behavior
           if (this.hash !== "") {
-            event.preventDefault(); // Prevent default anchor behavior
-    
+            event.preventDefault();
             var hash = this.hash;
             var offset = $(hash).offset().top;
-            var scrollDuration = 200; // Duration for scroll animation
+            var scrollDuration = 200; // Set the duration to 200 milliseconds
     
+            // Smooth scroll to the target section
             $('html, body').animate({
               scrollTop: offset
-            }, scrollDuration, 'linear', function() {
-              window.location.hash = hash;
-            });
+            }, scrollDuration, 'linear');
     
             // Add 'active' class to the clicked link and remove from others
             $('a.nav-link').removeClass('active');
             $(this).addClass('active');
+            
+            // Update URL hash
+            window.location.hash = hash;
           }
         });
     
         // Smooth scrolling on arrow click (optional)
         $('.arrow-up').on('click', function() {
-          var scrollDuration = 200; // Duration for scroll animation
+          var scrollDuration = 200; // Set the duration to 200 milliseconds
           $('html, body').animate({
             scrollTop: 0
           }, scrollDuration, 'linear');
@@ -765,7 +767,7 @@ and T. Goodson III</p>
           var scrollPos = $(document).scrollTop();
           var scrollEnd = documentHeight - windowHeight;
     
-          var scrollDuration = 200; // Duration for scroll animation
+          var scrollDuration = 200; // Set the duration to 200 milliseconds
           if (scrollPos < scrollEnd) {
             $('html, body').animate({
               scrollTop: scrollPos + windowHeight
@@ -773,12 +775,14 @@ and T. Goodson III</p>
           }
         });
     
-        // Change navigation link color based on scroll position
+        // Update navigation link color based on scroll position
         $(document).on('scroll', function() {
           var scrollPos = $(document).scrollTop();
           $('.nav-link').each(function() {
             var currLink = $(this);
             var refElement = $(currLink.attr("href"));
+    
+            // Add active class if link's target section is in view
             if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
               $('.nav-link').removeClass("active");
               currLink.addClass("active");
@@ -787,10 +791,15 @@ and T. Goodson III</p>
             }
           });
         });
+    
+        // Highlight the link that corresponds to the current URL hash on page load
+        if (window.location.hash) {
+          var initialHash = window.location.hash;
+          $('a.nav-link').removeClass('active');
+          $('a.nav-link[href="' + initialHash + '"]').addClass('active');
+        }
       });
     </script>
-
-
 
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
