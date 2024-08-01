@@ -41,11 +41,11 @@ body {
 
 .dropdown-content button {
   background-color: #fcc69d; /* For the dropdown options */
-  color: white; /* For the dropdown option text */
+  color: black; /* For the dropdown option text */
   padding: 10px 14px; /* Adjust padding as needed */
   text-decoration: none;
   display: block;
-  width: 90%;
+  width: 100%;
   text-align: left;
   border: none;
   border-bottom: 1px solid #ccc; /* Add bottom border between items */
@@ -58,7 +58,7 @@ body {
 
 .dropdown-content button:hover {
   background-color: #fcc69d; /* Slightly darker shade on hover */
-  color: white; /* White text color on hover */
+  color: black; /* White text color on hover */
 }
 
 p {
