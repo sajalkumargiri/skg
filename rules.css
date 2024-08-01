@@ -16,7 +16,7 @@ body {
 }
 
 .dropdown-button {
-  background-color: #fcc69d; /* For the dropdown button */
+  background-color: #fcc69d; /* Darker blue color for the dropdown button */
   color: black;
   padding: 12px 30px; /* Adjust padding as needed */
   border: none;
@@ -29,8 +29,8 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #fcc69d; /* For the dropdown content background */
-  color: black; /* For the dropdown option text */
+  background-color: #fcc69d; /* Darker blue color for the dropdown content background */
+  color: black; /* Black color for the dropdown option text */
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
   max-height: 200px; /* Limit the height to avoid excessive size changes */
@@ -40,12 +40,12 @@ body {
 }
 
 .dropdown-content button {
-  background-color: #fcc69d; /* For the dropdown options */
-  color: black; /* For the dropdown option text */
+  background-color: #fcc69d; /* Darker blue color for the dropdown options */
+  color: black; /* Black color for the dropdown option text */
   padding: 10px 14px; /* Adjust padding as needed */
   text-decoration: none;
   display: block;
-  width: 100%;
+  width: 90%;
   text-align: left;
   border: none;
   border-bottom: 1px solid #ccc; /* Add bottom border between items */
@@ -57,8 +57,8 @@ body {
 }
 
 .dropdown-content button:hover {
-  background-color: #fcc69d; /* slightly darker shade on hover */
-  color: black; /* text color on hover */
+  background-color: #fcc69d; /* Slightly darker shade of blue on hover */
+  color: black; /* White text color on hover */
 }
 
 p {
@@ -184,9 +184,9 @@ h3 span {
   background-color: #0975bd;
   border: 1px solid black;
 }
-.btn-pink {
+.btn-pink {  
   background-color: #fcc69d;
-  border: 1px solid black;
+  border: 1px solid black; 
 }
 .btn-gray {
   background-color: white;
