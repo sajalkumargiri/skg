@@ -17,7 +17,7 @@ body {
 
 .dropdown-button {
   background-color: #0975bd; /* Darker blue color for the dropdown button */
-  color: white;
+  color: black;
   padding: 12px 30px; /* Adjust padding as needed */
   border: none;
   cursor: pointer;
