@@ -58,7 +58,7 @@ body {
 
 .dropdown-content button:hover {
   background-color: #0975bd; /* Slightly darker shade of blue on hover */
-  color: #0975bd; /* White text color on hover */
+  color: black; /* White text color on hover */
 }
 
 p {
