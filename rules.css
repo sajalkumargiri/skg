@@ -204,6 +204,12 @@ h3 span {
   background-color: mediumseagreen;
   border: 1px solid black;
 }
+
+.btn-outline-dark-magenta {
+  background-color: magenta;
+  border: 1px solid black;
+}
+
 .jumbotron {
   padding-bottom: 0rem;
   padding-top: 0.5rem;
