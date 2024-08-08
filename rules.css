@@ -12,18 +12,18 @@ body {
 .filter-dropdown {
   position: relative;
   display: inline-block;
-  margin-right: 10px; /* Adjust margin as needed */
+  margin-right: 10px; 
 }
 
 .dropdown-button {
   background-color: #ffffff;
   color: black;
-  padding: 10px 24px; /* Adjust padding as needed */
+  padding: 10px 24px; 
   border: none;
   cursor: pointer;
   width: 100%;
   text-align: left;
-  white-space: nowrap; /* Ensures text stays on one line */
+  white-space: nowrap; 
 }
 
 .dropdown-content {
@@ -33,23 +33,23 @@ body {
   color: black; 
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
   z-index: 1;
-  max-height: 100px; 
+  max-height: 300px; 
   overflow-y: auto; 
-  width: 100%;
-  border: 1px solid #ccc; /* Add border for better visibility */
+  width: 60%;
+  border: 1px solid #ccc;
 }
 
 .dropdown-content button {
-  background-color: #f5e3d5; /* Darker blue color for the dropdown options */
-  color: black; /* Black color for the dropdown option text */
-  padding: 10px 14px; /* Adjust padding as needed */
+  background-color: #000000;
+  color: black; 
+  padding: 10px 14px;
   text-decoration: none;
   display: block;
   width: 90%;
   text-align: left;
   border: none;
-  border-bottom: 1px solid #ccc; /* Add bottom border between items */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  border-bottom: 1px solid #ccc; 
+  box-sizing: border-box;
 }
 
 .dropdown-content button:last-child {
