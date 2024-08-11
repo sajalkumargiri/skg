@@ -172,6 +172,12 @@ h3 span {
   background-color: #dcdcdc;
   padding-top: 50px;
 }
+.text-orange {
+  color: orange; 
+}
+.text-purple {
+  color: purple; 
+}
 .btn-primary {
   background-color: #fd5949;
   border: 1px solid black;
