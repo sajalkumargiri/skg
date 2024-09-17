@@ -621,7 +621,7 @@ and T. Goodson III</p>
           </div>
           
 
-          <div class="col-12 publication text-left" data-year="2024" data-area="plasmon spec">
+          <div class="col-12 publication text-left" data-year="2024" data-area="plasmon">
               <h4>Plasmon-enhanced spectroscopy and photocatalysis</h4>
               <p>Journal: <strong> arXiv:2402.13478 </strong> (2024)</p>
               <p>Author(s): <strong> S. K. Giri </strong>, and G. C. Schatz</p>
@@ -1185,7 +1185,7 @@ and T. Goodson III</p>
   
   
   
-     <script>
+   <script>
       document.addEventListener("DOMContentLoaded", function() {
         const filterYearButton = document.getElementById("filter-year-btn");
         const filterYearOptions = document.getElementById("filter-year-options");
@@ -1199,15 +1199,14 @@ and T. Goodson III</p>
     
         function filterPublications() {
           const selectedYear = filterYearButton.getAttribute("data-filter");
-          const selectedAreas = Array.from(filterAreaOptions.querySelectorAll('input:checked'))
-                                     .map(input => input.getAttribute("data-filter"));
+          const selectedArea = filterAreaButton.getAttribute("data-filter");
     
           publications.forEach(publication => {
             const publicationYear = publication.getAttribute("data-year");
-            const publicationAreas = publication.getAttribute("data-area").split(' ');
+            const publicationArea = publication.getAttribute("data-area");
     
             const yearFilterMatches = (selectedYear === "all" || selectedYear === publicationYear);
-            const areaFilterMatches = selectedAreas.length === 0 || selectedAreas.some(area => publicationAreas.includes(area));
+            const areaFilterMatches = (selectedArea === "all" || selectedArea === publicationArea);
     
             if (yearFilterMatches && areaFilterMatches) {
               publication.style.display = "block";
@@ -1232,19 +1231,26 @@ and T. Goodson III</p>
           const target = event.target;
           if (target.tagName === "BUTTON") {
             const yearFilter = target.getAttribute("data-filter");
-            filterYearButton.textContent = `Year ▼ (${target.textContent})`;
+            filterYearButton.textContent = Year ▼ (${target.textContent});
             filterYearButton.setAttribute("data-filter", yearFilter);
             filterYearOptions.style.display = "none";
             filterPublications();
           }
         });
     
-        filterAreaOptions.addEventListener("change", function() {
-          filterPublications();
-        });
-    
         filterAreaButton.addEventListener("click", function() {
           toggleDropdown(filterAreaOptions);
+        });
+    
+        filterAreaOptions.addEventListener("click", function(event) {
+          const target = event.target;
+          if (target.tagName === "BUTTON") {
+            const areaFilter = target.getAttribute("data-filter");
+            filterAreaButton.textContent = Research ▼ (${target.textContent});
+            filterAreaButton.setAttribute("data-filter", areaFilter);
+            filterAreaOptions.style.display = "none";
+            filterPublications();
+          }
         });
     
         document.addEventListener("click", function(event) {
