@@ -1005,187 +1005,187 @@ and T. Goodson III</p>
     </footer>
 
 
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        var isScrolling = false; // Flag to prevent multiple simultaneous animations
-        var scrollTimeout; // To debounce scroll events
-    
-        function applyActiveClass() {
-          var scrollPos = $(document).scrollTop();
-          var windowHeight = $(window).height();
-          var currentActive = null;
-    
-          $('a.nav-link').each(function() {
-            var currLink = $(this);
-            var refElement = $(currLink.attr("href"));
-    
-            if (refElement.length) {
-              var elementTop = refElement.offset().top;
-              var elementBottom = elementTop + refElement.outerHeight();
-    
-              // Check if the section is within the viewport
-              if (elementTop <= scrollPos + windowHeight / 2 &&
-                  elementBottom > scrollPos + windowHeight / 2) {
-                currentActive = currLink;
+  
+  
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function() {
+          var isScrolling = false; // Flag to prevent multiple simultaneous animations
+          var scrollTimeout; // To debounce scroll events
+      
+          function applyActiveClass() {
+            var scrollPos = $(document).scrollTop();
+            var windowHeight = $(window).height();
+            var currentActive = null;
+      
+            $('a.nav-link').each(function() {
+              var currLink = $(this);
+              var refElement = $(currLink.attr("href"));
+      
+              if (refElement.length) {
+                var elementTop = refElement.offset().top;
+                var elementBottom = elementTop + refElement.outerHeight();
+      
+                // Check if the section is within the viewport
+                if (elementTop <= scrollPos + windowHeight / 2 &&
+                    elementBottom > scrollPos + windowHeight / 2) {
+                  currentActive = currLink;
+                }
               }
+            });
+      
+            if (currentActive) {
+              $('a.nav-link').removeClass("active");
+              currentActive.addClass("active");
+            }
+          }
+      
+          function scrollToElement(hash, callback) {
+            if (isScrolling) return;
+      
+            var offset = $(hash).offset().top;
+            var scrollDuration = 400; // Adjust duration as needed
+      
+            isScrolling = true;
+      
+            $('html, body').stop().animate({
+              scrollTop: offset
+            }, scrollDuration, 'swing', function() {
+              isScrolling = false;
+              if (callback) callback();
+            });
+      
+            // Optionally update the URL hash
+            window.location.hash = hash;
+          }
+      
+          $('a.nav-link').on('click', function(event) {
+            event.preventDefault();
+      
+            var hash = this.hash;
+      
+            // Directly set active class on click
+            $('a.nav-link').removeClass('active');
+            $(this).addClass('active');
+      
+            // Smoothly scroll to the target section
+            scrollToElement(hash);
+          });
+      
+          $('.arrow-up').on('click', function() {
+            if (isScrolling) return;
+      
+            var scrollDuration = 400;
+            isScrolling = true;
+      
+            $('html, body').stop().animate({
+              scrollTop: $(window).scrollTop() - $(window).height()
+            }, scrollDuration, 'swing', function() {
+              isScrolling = false;
+              applyActiveClass();
+            });
+          });
+      
+          $('.arrow-down').on('click', function() {
+            if (isScrolling) return;
+      
+            var scrollDuration = 400;
+            isScrolling = true;
+      
+            $('html, body').stop().animate({
+              scrollTop: $(window).scrollTop() + $(window).height()
+            }, scrollDuration, 'swing', function() {
+              isScrolling = false;
+              applyActiveClass();
+            });
+          });
+      
+          $(document).on('scroll', function() {
+            if (!isScrolling) {
+              if (scrollTimeout) clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(applyActiveClass, 100); // Debounce scroll event
             }
           });
-    
-          if (currentActive) {
-            $('a.nav-link').removeClass("active");
-            currentActive.addClass("active");
-          }
-        }
-    
-        function scrollToElement(hash, callback) {
-          if (isScrolling) return;
-    
-          var offset = $(hash).offset().top;
-          var scrollDuration = 400; // Adjust duration as needed
-    
-          isScrolling = true;
-    
-          $('html, body').stop().animate({
-            scrollTop: offset
-          }, scrollDuration, 'swing', function() {
-            isScrolling = false;
-            if (callback) callback();
-          });
-    
-          // Optionally update the URL hash
-          window.location.hash = hash;
-        }
-    
-        $('a.nav-link').on('click', function(event) {
-          event.preventDefault();
-    
-          var hash = this.hash;
-    
-          // Directly set active class on click
-          $('a.nav-link').removeClass('active');
-          $(this).addClass('active');
-    
-          // Smoothly scroll to the target section
-          scrollToElement(hash);
-        });
-    
-        $('.arrow-up').on('click', function() {
-          if (isScrolling) return;
-    
-          var scrollDuration = 400;
-          isScrolling = true;
-    
-          $('html, body').stop().animate({
-            scrollTop: $(window).scrollTop() - $(window).height()
-          }, scrollDuration, 'swing', function() {
-            isScrolling = false;
-            applyActiveClass();
-          });
-        });
-    
-        $('.arrow-down').on('click', function() {
-          if (isScrolling) return;
-    
-          var scrollDuration = 400;
-          isScrolling = true;
-    
-          $('html, body').stop().animate({
-            scrollTop: $(window).scrollTop() + $(window).height()
-          }, scrollDuration, 'swing', function() {
-            isScrolling = false;
-            applyActiveClass();
-          });
-        });
-    
-        $(document).on('scroll', function() {
-          if (!isScrolling) {
-            if (scrollTimeout) clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(applyActiveClass, 100); // Debounce scroll event
+      
+          // Check if there is an initial hash in the URL and apply the active class
+          if (window.location.hash) {
+            var initialHash = window.location.hash;
+            $('a.nav-link').removeClass('active');
+            $('a.nav-link[href="' + initialHash + '"]').addClass('active');
+            scrollToElement(initialHash);
           }
         });
-    
-        // Check if there is an initial hash in the URL and apply the active class
-        if (window.location.hash) {
-          var initialHash = window.location.hash;
-          $('a.nav-link').removeClass('active');
-          $('a.nav-link[href="' + initialHash + '"]').addClass('active');
-          scrollToElement(initialHash);
-        }
-      });
-    </script>
-    
-
-
-
-
-
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-    <script>
-      //Get the button
-      var mybutton = document.getElementById("myBtn");
+      </script>
       
-      window.onscroll = function() {scrollFunction()};
-      
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          mybutton.style.display = "block";
-        } else {
-          mybutton.style.display = "none";
-        }
-      }
-      
-      // When the user clicks on the button, scroll to the top of the document
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
-
-
-    
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-          // Select all elements with class 'showbibinfo' (all BibTex buttons)
-          var bibButtons = document.querySelectorAll('.showbibinfo');
-      
-          // Add click event listener to each BibTex button
-          bibButtons.forEach(function(button) {
-              button.addEventListener('click', function(event) {
-                  var bibinfoId = this.getAttribute('id').replace('showbibinfo', 'bibinfo');
-                  var bibinfo = document.getElementById(bibinfoId);
-                  toggleVisibility(bibinfo);
-                  event.stopPropagation(); // Prevent event from bubbling up
-              });
-          });
-      
-          // Add a click event listener to the document to hide bibinfo if clicked outside
-          document.addEventListener('click', function(event) {
-              bibButtons.forEach(function(button) {
-                  var bibinfoId = button.getAttribute('id').replace('showbibinfo', 'bibinfo');
-                  var bibinfo = document.getElementById(bibinfoId);
-                  if (!button.contains(event.target) && !bibinfo.contains(event.target)) {
-                      bibinfo.style.display = 'none';
-                  }
-              });
-          });
-      
-          // Function to toggle visibility
-          function toggleVisibility(element) {
-              if (element.style.display === 'block') {
-                  element.style.display = 'none';
-              } else {
-                  element.style.display = 'block';
-              }
+  
+  
+  
+  
+  
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+      <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
           }
-      });
-    </script>
-
-
-
-    <script>
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+      </script>
+  
+  
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all elements with class 'showbibinfo' (all BibTex buttons)
+            var bibButtons = document.querySelectorAll('.showbibinfo');
+        
+            // Add click event listener to each BibTex button
+            bibButtons.forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    var bibinfoId = this.getAttribute('id').replace('showbibinfo', 'bibinfo');
+                    var bibinfo = document.getElementById(bibinfoId);
+                    toggleVisibility(bibinfo);
+                    event.stopPropagation(); // Prevent event from bubbling up
+                });
+            });
+        
+            // Add a click event listener to the document to hide bibinfo if clicked outside
+            document.addEventListener('click', function(event) {
+                bibButtons.forEach(function(button) {
+                    var bibinfoId = button.getAttribute('id').replace('showbibinfo', 'bibinfo');
+                    var bibinfo = document.getElementById(bibinfoId);
+                    if (!button.contains(event.target) && !bibinfo.contains(event.target)) {
+                        bibinfo.style.display = 'none';
+                    }
+                });
+            });
+        
+            // Function to toggle visibility
+            function toggleVisibility(element) {
+                if (element.style.display === 'block') {
+                    element.style.display = 'none';
+                } else {
+                    element.style.display = 'block';
+                }
+            }
+        });
+      </script>
+  
+  
+  
+     <script>
       document.addEventListener("DOMContentLoaded", function() {
         const filterYearButton = document.getElementById("filter-year-btn");
         const filterYearOptions = document.getElementById("filter-year-options");
@@ -1199,14 +1199,15 @@ and T. Goodson III</p>
     
         function filterPublications() {
           const selectedYear = filterYearButton.getAttribute("data-filter");
-          const selectedArea = filterAreaButton.getAttribute("data-filter");
+          const selectedAreas = Array.from(filterAreaOptions.querySelectorAll('input:checked'))
+                                     .map(input => input.getAttribute("data-filter"));
     
           publications.forEach(publication => {
             const publicationYear = publication.getAttribute("data-year");
-            const publicationArea = publication.getAttribute("data-area");
+            const publicationAreas = publication.getAttribute("data-area").split(' ');
     
             const yearFilterMatches = (selectedYear === "all" || selectedYear === publicationYear);
-            const areaFilterMatches = (selectedArea === "all" || selectedArea === publicationArea);
+            const areaFilterMatches = selectedAreas.length === 0 || selectedAreas.some(area => publicationAreas.includes(area));
     
             if (yearFilterMatches && areaFilterMatches) {
               publication.style.display = "block";
@@ -1238,19 +1239,12 @@ and T. Goodson III</p>
           }
         });
     
-        filterAreaButton.addEventListener("click", function() {
-          toggleDropdown(filterAreaOptions);
+        filterAreaOptions.addEventListener("change", function() {
+          filterPublications();
         });
     
-        filterAreaOptions.addEventListener("click", function(event) {
-          const target = event.target;
-          if (target.tagName === "BUTTON") {
-            const areaFilter = target.getAttribute("data-filter");
-            filterAreaButton.textContent = `Research ▼ (${target.textContent})`;
-            filterAreaButton.setAttribute("data-filter", areaFilter);
-            filterAreaOptions.style.display = "none";
-            filterPublications();
-          }
+        filterAreaButton.addEventListener("click", function() {
+          toggleDropdown(filterAreaOptions);
         });
     
         document.addEventListener("click", function(event) {
@@ -1265,11 +1259,12 @@ and T. Goodson III</p>
         filterPublications(); // Initial filter application on page load
       });
     </script>
+  
+  
+  
 
-
-
-
-
+  
+  
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
