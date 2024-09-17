@@ -186,38 +186,13 @@ h3 span {
   background-color: #fd5949;
   border: 1px solid black;
 }
-.btn-darkred {
+.btn-outline-green {
+  background-color: mediumseagreen;
+  border: 1px solid black;
+}
+.btn-outline-darkred {
   background-color: #ad1b0c; 
   color: white; 
-  border: 1px solid black;
-}
-.btn-darkred:hover {
-  background-color: #ad1b0c; 
-  color: white;
-  border: 1px solid black;
-}
-.btn-blue {
-  background-color: #0975bd;
-  border: 1px solid black;
-}
-.btn-pink {  
-  background-color: #f5e3d5;
-  border: 1px solid black; 
-}
-.btn-orange {  
-  background-color: orange;
-  border: 1px solid black; 
-}
-.btn-cyan {  
-  background-color: #83dfe9;
-  border: 1px solid black; 
-}
-.btn-gray {
-  background-color: white;
-  border: 1px solid black;
-}
-.btn-outline-dark {
-  background-color: mediumseagreen;
   border: 1px solid black;
 }
 .jumbotron {
