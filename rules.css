@@ -186,6 +186,16 @@ h3 span {
   background-color: #fd5949;
   border: 1px solid black;
 }
+.btn-darkred {
+  background-color: #ad1b0c; 
+  color: white; 
+  border: 1px solid black;
+}
+.btn-darkred:hover {
+  background-color: #ad1b0c; 
+  color: white;
+  border: 1px solid black;
+}
 .btn-blue {
   background-color: #0975bd;
   border: 1px solid black;
