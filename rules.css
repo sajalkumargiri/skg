@@ -195,6 +195,10 @@ h3 span {
   color: white; 
   border: 1px solid black;
 }
+.btn-gray {
+  background-color: #808080;
+  border: 1px solid black;
+} 
 .jumbotron {
   padding-bottom: 0rem;
   padding-top: 0.5rem;
