@@ -135,6 +135,20 @@
     .nav-link.active {
       color: #f00;
     }
+
+  .hidden-content {
+      display: none; /* Hide the hidden content by default */
+      width: 100%; /* Expand to full width */
+      background-color: #f1f1f1; /* Background color */
+      padding: 20px; /* Add some padding */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for emphasis */
+      position: absolute; /* Position it above other content */
+      left: 0; /* Align to the left */
+      top: 100%; /* Align below the button */
+      z-index: 10; /* Ensure it appears above other elements */
+  }
+
+    
   </style>
     
 </head>
@@ -335,13 +349,16 @@
                       To this end, we develop theoretical methods to investigate the dynamics induced by entangled light, 
                       modeling the quantum state of light and its interactions with molecular and material systems that are in contact with a bath.
                   </p>
-                  <a href="./construction.html" class="btn btn-primary" target="_blank">Learn more!</a>
+                  <a href="#" class="btn btn-primary custom-btn learn-more" target="_blank">Learn more!</a>
+                  <div class="hidden-content">
+                    <p> This page is in construction. Please return Later. </p>
+                  </div>
                 </div>
               </div>
             </div>
           
 
-         <!-- RESEARCH B -->
+            <!-- RESEARCH B -->
             <div class="col d-flex justify-content-center">
               <div class="card text-center h-100">
                 <a href="./construction.html" target="_blank"><img
@@ -1516,6 +1533,43 @@ and T. Goodson III</p>
       });
     </script>
 
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const learnMoreButtons = document.querySelectorAll('.learn-more');
+          const hiddenContents = document.querySelectorAll('.hidden-content');
+      
+          learnMoreButtons.forEach((button, index) => {
+              button.addEventListener("click", function (event) {
+                  event.preventDefault(); // Prevent default anchor behavior
+                  const content = hiddenContents[index]; // Get the corresponding hidden content
+                  content.style.display = content.style.display === "block" ? "none" : "block"; // Toggle display
+      
+                  // Show the full width section
+                  content.style.position = "relative"; // Change to relative positioning
+                  content.style.width = "100%"; // Ensure it takes full width
+                  content.style.zIndex = "10"; // Bring it above other elements
+      
+                  // Stop the click from propagating to the document
+                  event.stopPropagation();
+              });
+          });
+      
+          // Hide all hidden content when clicking outside
+          document.addEventListener("click", function () {
+              hiddenContents.forEach(content => {
+                  content.style.display = "none"; // Hide all sections
+              });
+          });
+      
+          // Prevent hiding when clicking inside the hidden content
+          hiddenContents.forEach(content => {
+              content.addEventListener("click", function (event) {
+                  event.stopPropagation(); // Stop the click from bubbling up
+              });
+          });
+      });
+    </script>
 
 
 
