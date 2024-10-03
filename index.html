@@ -1249,14 +1249,15 @@ and T. Goodson III</p>
     </footer>
 
 
-
-
+    
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
         var isScrolling = false; // Flag to prevent multiple simultaneous animations
         var scrollTimeout; // To debounce scroll events
-    
+        var offset = 50; // Adjust this value to match your header height or desired space at the top
+        
         function applyActiveClass() {
           var scrollPos = $(document).scrollTop();
           var windowHeight = $(window).height();
@@ -1287,13 +1288,13 @@ and T. Goodson III</p>
         function scrollToElement(hash, callback) {
           if (isScrolling) return;
     
-          var offset = $(hash).offset().top;
-          var scrollDuration = 400; // Adjust duration as needed
+          var offsetTop = $(hash).offset().top - offset; // Apply the offset here
+          var scrollDuration = 100; // Adjust duration as needed
     
           isScrolling = true;
     
           $('html, body').stop().animate({
-            scrollTop: offset
+            scrollTop: offsetTop
           }, scrollDuration, 'swing', function() {
             isScrolling = false;
             if (callback) callback();
@@ -1360,6 +1361,7 @@ and T. Goodson III</p>
         }
       });
     </script>
+    
     
 
 
