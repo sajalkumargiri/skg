@@ -135,19 +135,6 @@
     .nav-link.active {
       color: #f00;
     }
-
-  .hidden-content {
-      display: none; /* Hide the hidden content by default */
-      width: 100%; /* Expand to full width */
-      background-color: #f1f1f1; /* Background color */
-      padding: 20px; /* Add some padding */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for emphasis */
-      position: absolute; /* Position it above other content */
-      left: 0; /* Align to the left */
-      top: 100%; /* Align below the button */
-      z-index: 10; /* Ensure it appears above other elements */
-  }
-
     
   </style>
     
@@ -332,7 +319,6 @@
               <div class="card text-center h-100">
                 <a href="./construction.html" target="_blank"><img
                   src="./fig/research_spectroscopy.jpg"
-                  class="card-img"
                   alt="research_spectroscopy_im"
                   style="height: auto;
                   object-fit: contain;"/></a>
@@ -348,11 +334,8 @@
                       Entangled light has shown promise in enhancing two-photon absorption and improving photochemical reaction efficiencies.
                       To this end, we develop theoretical methods to investigate the dynamics induced by entangled light, 
                       modeling the quantum state of light and its interactions with molecular and material systems that are in contact with a bath.
-                  </p>
-                  <a href="#" class="btn btn-primary custom-btn learn-more" target="_blank">Learn more!</a>
-                  <div class="hidden-content">
-                    <p> This page is in construction. Please return Later. </p>
-                  </div>
+                  </p> 
+                  <a href="#publications" class="btn btn-primary" target="_blank">Learn more!</a>
                 </div>
               </div>
             </div>
@@ -363,7 +346,6 @@
               <div class="card text-center h-100">
                 <a href="./construction.html" target="_blank"><img
                   src="./fig/research_ai.jpg"
-                  class="card-img"
                   alt="research_ai_im"
                   style="height: auto;
                   object-fit: contain;"/></a>
@@ -380,7 +362,7 @@
                     One of the main objectives of this research is to simulate quantum dynamics in an effective subspace that accelerates predictions while improving transparency.
                     Furthermore, we are incorporating quantum computing to enable efficient simulation of such dynamics.
                   </p>
-                  <a href="./construction.html" class="btn btn-primary" target="_blank">Learn more!</a>
+                  <a href="#publications" class="btn btn-primary" target="_blank">Learn more!</a>
                 </div>
               </div>
             </div>
@@ -391,7 +373,6 @@
               <div class="card text-center h-100">
                 <a href="./construction.html" target="_blank"><img
                   src="./fig/research_entanglement.jpg"
-                  class="card-img"
                   alt="research_entanglement"
                   style="height: auto;
                   object-fit: contain;"/></a>
@@ -406,7 +387,7 @@
                     Our research focuses on the generation of quantum entanglement in excitonic systems and the investigation of entangled photon scattering,
                     offering insights into the fundamental processes of entanglement transfer and fidelity.
                   </p>
-                  <a href="./construction.html" class="btn btn-primary" target="_blank">Learn more!</a>
+                  <a href="#publications" class="btn btn-primary" target="_blank">Learn more!</a>
                 </div>
               </div>
             </div>
@@ -417,7 +398,6 @@
               <div class="card text-center h-100">
                 <a href="./construction.html" target="_blank"><img
                   src="./fig/research_plasmon.jpg"
-                  class="card-img"
                   alt="research_plasmon_im"
                   style="height: auto;
                   object-fit: contain;"/></a>
@@ -430,7 +410,7 @@
                       Within this research field, the central focus lies in understanding hot-carrier dynamics generated through the decay of LSPR and their role in potential applications for harnessing solar radiation.
                       Our studies investigate the generation of polaritonic states through strong coupling between plasmons and molecules, and explore their impact on spectroscopic and photocatalytic processes.
                   </p>
-                  <a href="./construction.html" class="btn btn-primary" target="_blank">Learn more!</a>
+                  <a href="#publications" class="btn btn-primary" target="_blank">Learn more!</a>
                 </div>
               </div>
             </div>
@@ -1257,7 +1237,7 @@ and T. Goodson III</p>
 
     
 
-    // Update Real Date and Time 
+    // Update real date and time 
     <script>
       $(document).ready(function() {
         function updateDate() {
@@ -1275,7 +1255,7 @@ and T. Goodson III</p>
 
 
     
-    // Scroll Options 
+    // Scroll options 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
       $(document).ready(function() {
@@ -1388,7 +1368,7 @@ and T. Goodson III</p>
     </script>
     
   
-    // Scroll Options Contd.
+    // Scroll options contd.
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     <script>
       //Get the button
@@ -1412,7 +1392,7 @@ and T. Goodson III</p>
     </script>
 
 
-   // BibTex Option
+   // BibTex options
     <script>
       document.addEventListener('DOMContentLoaded', function() {
           // Select all elements with class 'showbibinfo' (all BibTex buttons)
@@ -1532,45 +1512,6 @@ and T. Goodson III</p>
         filterPublications(); // Initial filter application on page load
       });
     </script>
-
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const learnMoreButtons = document.querySelectorAll('.learn-more');
-          const hiddenContents = document.querySelectorAll('.hidden-content');
-      
-          learnMoreButtons.forEach((button, index) => {
-              button.addEventListener("click", function (event) {
-                  event.preventDefault(); // Prevent default anchor behavior
-                  const content = hiddenContents[index]; // Get the corresponding hidden content
-                  content.style.display = content.style.display === "block" ? "none" : "block"; // Toggle display
-      
-                  // Show the full width section
-                  content.style.position = "relative"; // Change to relative positioning
-                  content.style.width = "100%"; // Ensure it takes full width
-                  content.style.zIndex = "10"; // Bring it above other elements
-      
-                  // Stop the click from propagating to the document
-                  event.stopPropagation();
-              });
-          });
-      
-          // Hide all hidden content when clicking outside
-          document.addEventListener("click", function () {
-              hiddenContents.forEach(content => {
-                  content.style.display = "none"; // Hide all sections
-              });
-          });
-      
-          // Prevent hiding when clicking inside the hidden content
-          hiddenContents.forEach(content => {
-              content.addEventListener("click", function (event) {
-                  event.stopPropagation(); // Stop the click from bubbling up
-              });
-          });
-      });
-    </script>
-
 
 
    // Footer
