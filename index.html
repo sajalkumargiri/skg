@@ -167,8 +167,8 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-text" style="color: gray; margin-left: auto;">
-              Updated on: <span id="currentDate">October 2, 2024</span>
+           <div class="navbar-text" style="color: gray; margin-left: auto;">
+            Updated on: <span style="font-weight: bold;">October 2, 2024</span>
           </div>
         </div>
       </nav>
@@ -1236,25 +1236,6 @@ and T. Goodson III</p>
         </div>
       </div>
     </footer>
-
-
-    
-
-    // Update Real Date and Time 
-    <script>
-      $(document).ready(function() {
-        function updateDate() {
-          var today = new Date();
-          var options = { year: 'numeric', month: 'long', day: 'numeric' };
-          var formattedDate = today.toLocaleDateString(undefined, options);
-          
-          // Display the formatted date in the navbar
-          $('#currentDate').text(formattedDate);
-        }
-
-        updateDate();
-      });
-    </script>
 
 
     
