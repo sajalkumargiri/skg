@@ -201,12 +201,12 @@ h3 span {
   color: white; 
   border: 1px solid white;
 }
-.btn-white-text-black-outline-white {
-  background-color: white;
-  color: black; 
+.btn-gray-text-white-outline-white {
+  background-color: gray;
+  color: white; 
   border: 1px solid white;
 }
-.btn-white-text-black-outline-white:hover {
+.btn-gray-text-white-outline-white:hover {
   background-color: black;
   color: white; 
   border: 1px solid white;
