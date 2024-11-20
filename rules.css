@@ -181,6 +181,16 @@ h3 span {
 .text-purple {
   color: purple; 
 }
+.btn-gray-text-white-outline-black {
+  background-color: gray;
+  color: white; 
+  border: 1px solid black;
+}
+.btn-gray-text-white-outline-black:hover {
+  background-color: white;
+  color: black; 
+  border: 1px solid black;
+}
 .btn-blue-text-white-outline-black {
   background-color: #217aed;
   color: white; 
@@ -217,7 +227,7 @@ h3 span {
   border: 1px solid white;
 }
 .btn-red-text-white-outline-white:hover {
-  background-color: white; 
+  background-color: gray; 
   color: black; 
   border: 1px solid white;
 }
