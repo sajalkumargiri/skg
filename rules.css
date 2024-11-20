@@ -191,22 +191,22 @@ h3 span {
   color: black; 
   border: 1px solid black;
 }
-.btn-green-txt-black-outline-white {
+.btn-green-text-black-outline-white {
   background-color: mediumseagreen;
   color: black; 
   border: 1px solid white;
 }
-.btn-green-txt-black-outline-white:hover {
+.btn-green-text-black-outline-white:hover {
   background-color: black;
   color: white; 
   border: 1px solid white;
 }
-.btn-gray-txt-white-outline-white {
+.btn-gray-text-white-outline-white {
   background-color: gray;
   color: white; 
   border: 1px solid white;
 }
-.btn-gray-txt-white-outline-white:hover {
+.btn-gray-text-white-outline-white:hover {
   background-color: black;
   color: white; 
   border: 1px solid white;
