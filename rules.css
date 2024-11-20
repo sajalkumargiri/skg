@@ -189,6 +189,16 @@ h3 span {
   background-color: #fd5949;
   border: 1px solid black;
 }
+.btn-green-txt-black-outline-white {
+  background-color: mediumseagreen;
+  color: black; 
+  border: 1px solid white;
+}
+.btn-gray-txt-black-outline-white {
+  background-color: gray;
+  color: black; 
+  border: 1px solid white;
+}
 .btn-outline-dark {
   background-color: mediumseagreen;
   border: 1px solid black;
