@@ -226,17 +226,6 @@ h3 span {
   border: 1px solid black;
 } 
 
-
-.btn-outline-dark {
-  background-color: mediumseagreen;
-  border: 1px solid black;
-}
-.btn-outline-darkred {
-  background-color: #ad1b0c; 
-  color: white; 
-  border: 1px solid black;
-}
-
 .jumbotron {
   padding-bottom: 0rem;
   padding-top: 0.5rem;
