@@ -182,7 +182,7 @@ h3 span {
   color: purple; 
 }
 .btn-gray-text-white-outline-black {
-  background-color: gray;
+  background-color: #cccdcf;
   color: white; 
   border: 1px solid black;
 }
