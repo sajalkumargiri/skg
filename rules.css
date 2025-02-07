@@ -187,8 +187,8 @@ h3 span {
   border: 1px solid black;
 }
 .btn-white-text-black-outline-black:hover {
-  background-color: #bbbbbd;
-  color: black; 
+  background-color: black;
+  color: white; 
   border: 1px solid black;
 }
 .btn-gray-text-white-outline-black {
@@ -219,16 +219,6 @@ h3 span {
 .btn-green-text-black-outline-black:hover {
   background-color: black;
   color: white; 
-  border: 1px solid black;
-}
-.btn-gray-text-white-outline-black {
-  background-color: #6e6d6d;
-  color: #d1cfcf; 
-  border: 1px solid black;
-}
-.btn-gray-text-white-outline-black:hover {
-  background-color: black;
-  color: #d1cfcf; 
   border: 1px solid black;
 }
 .btn-red-text-white-outline-black {
