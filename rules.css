@@ -201,15 +201,15 @@ h3 span {
   color: black; 
   border: 1px solid black;
 }
-.btn-green-text-black-outline-white {
+.btn-green-text-black-outline-black {
   background-color: mediumseagreen;
   color: black; 
-  border: 1px solid white;
+  border: 1px solid black;
 }
-.btn-green-text-black-outline-white:hover {
+.btn-green-text-black-outline-black:hover {
   background-color: black;
   color: white; 
-  border: 1px solid white;
+  border: 1px solid black;
 }
 .btn-gray-text-white-outline-white {
   background-color: #6e6d6d;
