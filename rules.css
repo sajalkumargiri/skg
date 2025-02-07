@@ -187,8 +187,8 @@ h3 span {
   border: 1px solid black;
 }
 .btn-white-text-black-outline-black:hover {
-  background-color: black;
-  color: white; 
+  background-color: #D3D3D3;
+  color: black; 
   border: 1px solid black;
 }
 .btn-gray-text-white-outline-black {
