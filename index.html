@@ -159,7 +159,7 @@
 
   @media (max-width: 768px) {
     .floating-text h1 {
-      font-size: font-size: clamp(1.5rem, 8vw, 3rem); /* Adjust font size dynamically for smaller screens */
+      font-size: clamp(1.5rem, 8vw, 3rem); /* Adjust font size dynamically for smaller screens */
     }
   }
     
@@ -1419,47 +1419,9 @@ and T. Goodson III</p>
     }
   </script>
 
+  
 
- // BibTex Option
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Select all elements with class 'showbibinfo' (all BibTex buttons)
-        var bibButtons = document.querySelectorAll('.showbibinfo');
-    
-        // Add click event listener to each BibTex button
-        bibButtons.forEach(function(button) {
-            button.addEventListener('click', function(event) {
-                var bibinfoId = this.getAttribute('id').replace('showbibinfo', 'bibinfo');
-                var bibinfo = document.getElementById(bibinfoId);
-                toggleVisibility(bibinfo);
-                event.stopPropagation(); // Prevent event from bubbling up
-            });
-        });
-    
-        // Add a click event listener to the document to hide bibinfo if clicked outside
-        document.addEventListener('click', function(event) {
-            bibButtons.forEach(function(button) {
-                var bibinfoId = button.getAttribute('id').replace('showbibinfo', 'bibinfo');
-                var bibinfo = document.getElementById(bibinfoId);
-                if (!button.contains(event.target) && !bibinfo.contains(event.target)) {
-                    bibinfo.style.display = 'none';
-                }
-            });
-        });
-    
-        // Function to toggle visibility
-        function toggleVisibility(element) {
-            if (element.style.display === 'block') {
-                element.style.display = 'none';
-            } else {
-                element.style.display = 'block';
-            }
-        }
-    });
-  </script>
-
-
- // Publication options
+  // Publication options
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const filterYearButton = document.getElementById("filter-year-btn");
@@ -1542,36 +1504,44 @@ and T. Goodson III</p>
   </script>
 
 
-
-
- // Footer
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"
-  ></script>
-  
+  // BibTex Option
   <script>
-    let tid = "#pub_table";
-    let headers = document.querySelectorAll(tid + " th");
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all elements with class 'showbibinfo' (all BibTex buttons)
+        var bibButtons = document.querySelectorAll('.showbibinfo');
     
-    // Sort the table element when clicking on the table headers
-    headers.forEach(function(element, i) {
-      element.addEventListener("click", function() {
-        w3.sortHTML(tid, ".item", "td:nth-child(" + (i + 1) + ")");
-      });
+        // Add click event listener to each BibTex button
+        bibButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                var bibinfoId = this.getAttribute('id').replace('showbibinfo', 'bibinfo');
+                var bibinfo = document.getElementById(bibinfoId);
+                toggleVisibility(bibinfo);
+                event.stopPropagation(); // Prevent event from bubbling up
+            });
+        });
+    
+        // Add a click event listener to the document to hide bibinfo if clicked outside
+        document.addEventListener('click', function(event) {
+            bibButtons.forEach(function(button) {
+                var bibinfoId = button.getAttribute('id').replace('showbibinfo', 'bibinfo');
+                var bibinfo = document.getElementById(bibinfoId);
+                if (!button.contains(event.target) && !bibinfo.contains(event.target)) {
+                    bibinfo.style.display = 'none';
+                }
+            });
+        });
+    
+        // Function to toggle visibility
+        function toggleVisibility(element) {
+            if (element.style.display === 'block') {
+                element.style.display = 'none';
+            } else {
+                element.style.display = 'block';
+            }
+        }
     });
   </script>
-  
-  <script src="https://www.w3schools.com/lib/w3.js"></script>
-  
-  <script>
-    // Navbar colapse after click
-      $('.navbar-collapse a').click(function(){
-          $(".navbar-collapse").collapse('hide');
-      });
-  </script>
-      
+
 </body>
   
 </html>
