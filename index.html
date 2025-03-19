@@ -1322,7 +1322,7 @@ and T. Goodson III</p>
         if (isScrolling) return;
   
         var offsetTop = $(hash).offset().top - offset; // Apply the offset here
-        var scrollDuration = 100; // Adjust duration as needed
+        var scrollDuration = 0; // Adjust duration as needed
   
         isScrolling = true;
   
@@ -1381,7 +1381,7 @@ and T. Goodson III</p>
       $(document).on('scroll', function() {
         if (!isScrolling) {
           if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(applyActiveClass, 100); // Debounce scroll event
+          scrollTimeout = setTimeout(applyActiveClass, 0); // Debounce scroll event
         }
       });
   
