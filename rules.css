@@ -362,7 +362,7 @@ hr.light-100 {
   margin-bottom: 1rem;
 }
 .hr.gray-thick-line {
-  border-top: 2px solid #f2f4f5; 
+  border-top: 8px solid #f2f4f5; 
   opacity: 0.75;
   width: 40%;
   margin: 0 auto;
