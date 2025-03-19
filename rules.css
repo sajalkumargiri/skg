@@ -347,16 +347,24 @@ hr.light {
   margin-bottom: 1rem;
 }
 hr.light-100 {
-  border-top: 2px solid #343a40;
+  border-top: 2px solid #007bff;
   opacity: 0.75;
   width: 100%;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
 }
-hr.light-90 {
-  border-top: 2px solid #343a40;
+.hr.light-90 {
+  border-top: 2px solid #007bff; 
   opacity: 0.75;
   width: 90%;
+  margin: 0 auto;
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+}
+.hr.gray-thick-line {
+  border-top: 2px solid #f2f4f5; 
+  opacity: 0.75;
+  width: 40%;
   margin: 0 auto;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
