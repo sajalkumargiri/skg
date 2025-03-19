@@ -169,14 +169,15 @@
   .bold-text {
     font-weight: bold;
   }
-
-  white-thick-line {
-    border: 0;            /* Remove default border */
-    border-top: 5px solid white; /* Thick solid line */
-    margin: 20px auto;     /* Auto margin for centering */
-    width: 80%;            /* Line takes 80% of the page width */
+  
+  .thick-gray-line {
+    border: 0;
+    height: 10px; /* Adjust thickness of the line */
+    background-color: gray; /* Set the color to gray */
+    margin: 20px auto; /* Center the line with 20px margin above and below */
+    width: 70%; /* Set the line width to 70% of the container */
   }
-
+    
   </style>
     
 </head>
@@ -222,15 +223,18 @@
         <div class="col-12">
           <div class="cover-container">
             <img src="fig/cover.jpg" class="img-fluid" alt="cover_im">
+  
             <div class="floating-text">
               <h1 class="display-4 no-bold">Welcome To</h1>
-              <hr class="white-thick-line">
+              <div class="line-container">
+                <hr class="thick-gray-line">
+              </div>
               <h1 class="display-4 bold-text">Giri Research Group</h1>
             </div>
           </div>
         </div>
       </div>
-      <hr class="white-thick-line">
+      <hr class="light-90">
     </div>
   
     <div class="container-fluid">
@@ -355,7 +359,7 @@
                   To explore this possibility, we integrate quantum dynamics with machine learning methods.
                 </p>
                 <div style="text-align: center;">
-                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: auto;">Learn more</a>
+                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: 30%;">Learn more</a>
                 </div>
               </div>
             </div>
@@ -378,7 +382,7 @@
                   Our research develops theoretical frameworks for modeling polariton assisted photocatalysis, energy/charge transfer, and spectroscopy.  
                 </p>
                 <div style="text-align: center;">
-                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: auto;">Learn more</a>
+                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: 30%;">Learn more</a>
                 </div>
               </div>
             </div>
@@ -401,7 +405,7 @@
                   To this end, we develop theoretical frameworks to address fundamental understanding like entanglement transfer in light-matter interactions and their connection with the nonlinear spectroscopy.
                 </p>
                 <div style="text-align: center;">
-                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: auto;">Learn more</a>
+                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: 30%;">Learn more</a>
                 </div>
               </div>
             </div>
