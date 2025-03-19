@@ -142,7 +142,7 @@
     width: 100%;
     }
     
-    .floating-text {
+  .floating-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -154,7 +154,14 @@
     width: 100%; /* Ensures the text takes full width */
     text-align: center; /* Centers the text */
     font-size: 4rem; /* Adjusts the size of the text */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .floating-text h1 {
+      font-size: 2rem; /* Adjust font size on smaller screens */
     }
+  }
     
   </style>
     
