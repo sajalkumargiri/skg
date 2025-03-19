@@ -141,14 +141,19 @@
     width: 100%;
   }
 
-  .floating-text {
+	.floating-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    font-weight: bold; /* Makes the text bold */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional for better text visibility */
     z-index: 10; /* Ensures the text is on top of the image */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    width: 100%; /* Ensures the text takes full width */
+    text-align: center; /* Centers the text */
+    font-size: 4rem; /* Adjusts the size of the text */
   }
     
   </style>
@@ -188,43 +193,40 @@
       
     
 <!!==================================================================================================================================
-	<!-- Home -->
-	<div class="white" id="home">
-		
-		<div class="container-fluid">
-			<div class="row home text-center">
-				<div class="col-12">
-					<div class="cover-container">
-						<!-- Cover Image -->
-						<img src="fig/cover.jpg" class="img-fluid" alt="cover_im">
-	
-						<!-- Floating Text -->
-						<div class="floating-text">
-							<h1 class="display-4">Theoretical Light-Matter Chemistry Group</h1>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr class="light-90">
-		</div>
-	
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-12">
-					<p class="lead">
-						We leverage machine learning (ML) and quantum dynamics (QD) methods to investigate excited state dynamics of molecules and exciton systems in plasmonic nanocavities.
-						Strong plasmon-exciton coupling leads to the formation of hybrid plasmon-exciton states, commonly referred to as polaritons or plexciton.
-						Our research explores such polariton/plexciton states and their impact on photocatalysis, energy/charge transfer, and spectroscopy.
-						<br><br>
-						<a href="#research">
-							<button type="button" target="_blank" class="btn btn-gray-text-white-outline-black btn-md">Learn more</button>
-						</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	
-	</div>
+<!-- Home -->
+  <div class="white" id="home">
+    <div class="container-fluid">
+      <div class="row home text-center">
+        <div class="col-12">
+          <div class="cover-container">
+            <img src="fig/cover.jpg" class="img-fluid" alt="cover_im">
+  
+            <div class="floating-text">
+              <h1 class="display-4">Theoretical Light-Matter Chemistry Group</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="light-90">
+    </div>
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <p class="lead">
+            We leverage machine learning (ML) and quantum dynamics (QD) methods to investigate excited state dynamics of molecules and exciton systems in plasmonic nanocavities.
+            Strong plasmon-exciton coupling leads to the formation of hybrid plasmon-exciton states, commonly referred to as polaritons or plexciton.
+            Our research explores such polariton/plexciton states and their impact on photocatalysis, energy/charge transfer, and spectroscopy.
+            <br><br>
+            <a href="#research">
+              <button type="button" target="_blank" class="btn btn-gray-text-white-outline-black btn-md">Learn more</button>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+  </div>
 
 <!!==================================================================================================================================
     <!-- NEWS -->
