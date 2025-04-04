@@ -1,118 +1,1579 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Group</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body, html {
-      height: 100%;
-      overflow: hidden;
-    }
-
-    header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 10;
-    }
-
-    nav {
-      display: flex;
-      gap: 40px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-    }
-
-    .background {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') no-repeat center center/cover;
-      z-index: 1;
-    }
-
-    .bubble {
-      position: absolute;
-      bottom: -100px;
-      width: 20px;
-      height: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-      animation: rise 10s infinite ease-in;
-    }
-
-    @keyframes rise {
-      0% {
-        transform: translateY(0);
-        opacity: 0.7;
-      }
-      100% {
-        transform: translateY(-120vh);
-        opacity: 0;
-      }
-    }
-
-    .floating-text {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-size: 3rem;
-      font-weight: bold;
-      z-index: 5;
-      transform: translateY(-50%);
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
-    }
-  </style>
-</head>
-<body>
-  <div class="background"></div>
-  <header>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#news">Recent News</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <div class="floating-text">Welcome to Our Research Group</div>
   
-  <!-- Bubbles -->
-  <script>
-    function createBubble() {
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
-      bubble.style.left = Math.random() * 100 + 'vw';
-      bubble.style.animationDuration = (8 + Math.random() * 4) + 's';
-      bubble.style.width = bubble.style.height = (10 + Math.random() * 20) + 'px';
-      document.body.appendChild(bubble);
-      setTimeout(() => bubble.remove(), 12000);
-    }
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="plasmon, machine learning, quantum, transport" />
+    <meta
+      name="The Giri Research Group"
+      content="The Giri Research Group"
+    />
+    <title>The Giri Research Group</title>
 
-    setInterval(createBubble, 400);
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link type="text/css" rel="stylesheet" href="rules.css" />
+    <link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://latex.codecogs.com/css/equation-embed.css" />
+    <script type="text/javascript" src="http://latex.codecogs.com/js/eq_config.js" ></script>
+    <script type="text/javascript" src="http://latex.codecogs.com/js/eq_editor-lite-18.js" ></script>
+
+  <style>
+    .image-row {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    }
+    
+    .image-row img {
+    width: 10%; 
+    height: auto; 
+    padding: 2px;
+    }
+    
+    .lgray {
+    background-color: #f3f3f3; 
+    padding: 20px;
+    }
+    
+    .white {
+    background-color: white; 
+    padding: 20px;
+    }
+    
+    .black {
+    background-color: black;
+    padding: 20px; 
+    }
+    
+    .font-1 {
+    font-size: 38px; 
+    text-align: center;
+    }
+    
+    .filter-dropdown {
+    display: inline-block;
+    margin-right: 10px;
+    }
+    
+    .filter-dropdown button {
+    display: inline-block; 
+    } 
+    
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-width: 160px;
+    }
+    
+    .dropdown-content button {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    }
+    
+    .dropdown-content button:hover {
+    background-color: #f9f9f9;
+    }
+    
+    .publication {
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    }
+    
+    .publication h3 {
+    margin-top: 0;
+    }
+    
+    .publication p {
+    margin-bottom: 5px;
+    }
+    
+    .expand-info {
+    display: none;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    }
+    
+    .nav-link {
+    color: #000; 
+    text-decoration: none;
+    }
+    
+    .nav-link.active {
+    color: #f00;
+    }
+    
+  #home {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cover-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cover-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* this makes it behave like a background image */
+  }
+
+  .floating-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional for better text visibility */
+    z-index: 10; /* Ensures the text is on top of the image */
+    width: 100%; /* Ensures the text takes full width */
+    text-align: center; /* Centers the text */
+    font-size: 4rem; /* Adjusts the size of the text */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .floating-text h1 {
+      font-size: 2rem; /* Adjust font size on smaller screens */
+    }
+  }
+
+  .no-bold {
+    font-weight: normal;
+  }
+  
+  .bold-text {
+    font-weight: bold;
+  }
+  
+  .thick-gray-line {
+    border: 0;
+    height: 10px; /* Adjust thickness of the line */
+    background-color: gray; /* Set the color to gray */
+    margin: 20px auto; /* Center the line with 20px margin above and below */
+    width: 70%; /* Set the line width to 70% of the container */
+  }
+    
+  </style>
+    
+</head>
+
+
+<body>
+  
+  <!!==================================================================================================================================
+  <!-- NAVIGATION -->
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a id="nav-home" class="nav-link active" href="#home"><i class="fa fa-fw fa-home"></i> Home </a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-news" class="nav-link" href="#news"><i class="fa fa-fw fa-newspaper"></i> News </a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-research" class="nav-link" href="#research"><i class="fa fa-fw fa-laptop"></i> Research </a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-publications" class="nav-link" href="#publications"><i class="fa fa-fw fa-book"></i> Publications </a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-contactme" class="nav-link" href="#contactme"><i class="fa fa-fw fa-envelope"></i> Contact </a>
+          </li>
+        </ul>
+      </div>
+       <div class="navbar-text" style="color: gray; margin-left: auto;">
+        Updated on: <span> 20th March, 2025</span>
+      </div>
+    </div>
+  </nav>
+
+    
+  <!!==================================================================================================================================
+  <!-- Home -->
+  <div class="white" id="home">
+    <div class="container-fluid">
+      <div class="row home text-center">
+        <div class="col-12">
+          <div class="cover-container">
+            <img src="fig/cover.jpg" class="img-fluid" alt="cover_im">
+  
+            <div class="floating-text">
+              <h1 class="display-4 no-bold">Welcome To</h1>
+              <hr class="gray-thick-line">
+              <h1 class="display-4 bold-text">The Giri Research Group</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="light-90">
+    </div>
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <p class="lead">
+            We are interested in developing and applying theoretical and computational methods to explore light-matter interactions.
+            Shaping light-matter interactions by leveraging quantum aspects is the primary focus of the group.
+            Our current research contributes to the fundamental understanding of light-matter at the nanoscale, including strong light-matter coupling and interactions with quantum light.
+            <br><br>
+            <a href="#research">
+              <button type="button" target="_blank" class="btn btn-gray-text-white-outline-black btn-md">Learn more</button>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  <!!==================================================================================================================================
+  <!-- NEWS -->
+  <div class="lgray" id="news">
+    <div class="container-fluid padding">
+      <div class="row news text-center">
+        <div class="col-12">
+          <h1 class="font-1">Recent News</h1>
+        </div>
+        <hr class="light-90">
+      </div>
+        <ul class="li-2col-lg">
+        <li> 
+          <strong>March 2025:</strong> Our recent work on Entangled Light-Matter is out &nbsp;|&nbsp; JCP &nbsp;|&nbsp; 
+          <a href="https://pubs.aip.org/aip/jcp/article/162/11/114106/3339919/Modeling-entanglement-dynamics-of-molecules" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>
+        </li>
+        <br>
+        <li> 
+          <strong>Jan. 2025:</strong> New work on plasmon dephasing &nbsp;|&nbsp; JCTC &nbsp;|&nbsp; 
+          <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jctc.4c01302" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>
+        </li>
+        <br>
+        <li> 
+          <strong>Nov. 2024:</strong> Plasmon driven spectroscopy and photocatalysis out in Springer &nbsp; |&nbsp; 
+          <a href="https://link.springer.com/book/10.1007/978-981-97-5818-0" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>
+        </li>
+        <br>
+        <li> 
+          <strong>Nov. 2024:</strong> Excited to share our recent work on SERS modeling with TDDFTB &nbsp;|&nbsp; JPC C &nbsp;|&nbsp; 
+          <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpcc.4c05828" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>
+        </li>
+        <br>
+         <li> 
+          <strong>Oct. 2024:</strong> Our latest PNAS paper is in the news &nbsp;|&nbsp;  
+          <a href="https://www.eurekalert.org/news-releases/1061712" target="_blank" style="color: blue; font-size: 1.0em;"> EurekAlert </a>&nbsp;|&nbsp;  
+          <a href="https://www.sciencedaily.com/releases/2024/10/241017112352.htm" target="_blank" style="color: blue; font-size: 1.0em;"> ScienceDaily </a>&nbsp;|&nbsp; 
+          <a href="https://phys.org/news/2024-10-visible-energy-yields-added-carbon.html" target="_blank" style="color: blue; font-size: 1.0em;"> PHYS.ORG </a>&nbsp;|&nbsp; 
+          <a href="https://phys.org/news/2024-10-visible-energy-yields-added-carbon.html" target="_blank" style="color: blue; font-size: 1.0em;"> IllinoisNews </a>
+         </li>
+         <br>
+         <li> 
+          <strong>Oct. 2024:</strong> Excited to share our latest work on plasmon-driven chemistry &nbsp;|&nbsp; PNAS &nbsp;|&nbsp; 
+          <a href="https://www.pnas.org/doi/10.1073/pnas.2404433121" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>
+        </li>
+        <br>
+        <li> 
+          <strong>Sept. 2024:</strong> Check out our recent work on quantum light spectroscopy of D-A-D molecules &nbsp;|&nbsp; JPC Lett. &nbsp;|&nbsp;
+          <a href="https://pubs.acs.org/doi/10.1021/acs.jpclett.4c01948?ref=pdf" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>
+        </li>
+        <br>
+        <li> 
+          <strong>Aug. 2024:</strong> New work on plasmon driven chemistry! Just accepted for publication in PNAS   
+        </li>
+        <br>
+        <li> 
+          <strong>July 2024:</strong> DFTB for nonlinear plasmonics? Check out our recent paper &nbsp;|&nbsp;
+          <a href="https://pubs.aip.org/aip/jcp/article/161/4/044703/3304133/Laser-pulse-induced-second-and-third-harmonic?searchresult=1" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>   
+        </li>
+        <br>
+        <li> 
+          <strong>July 2024:</strong> Roadmap for AI-driven material science from the BiGmax research group &nbsp;|&nbsp;
+          <a href="https://iopscience.iop.org/article/10.1088/1361-651X/ad4d0d/meta" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>   
+        </li>
+        <br>
+        <li> 
+          <strong>Feb. 2024:</strong> Check out our recent paper on DFTB for SERS &nbsp;|&nbsp; 
+          <a href="https://arxiv.org/abs/2402.13478" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>   
+        </li>
+        <br>
+        <li> 
+          <strong>July 2023:</strong> Does photonic entanglement open up unique photoexcitation pathways that are unattainable with classical light? Check out our paper in PNAS for more details &nbsp;|&nbsp;
+          <a href="https://www.pnas.org/doi/10.1073/pnas.2307719120" target="_blank" style="color: blue; font-size: 1.0em;"> Link </a>   
+        </li>
+        </ul>
+    </div>
+  </div> 
+
+  <!!==================================================================================================================================
+  <!-- RESEARCH -->
+  <div class="white" id="research">
+    <div class="container-fluid padding p-0"> <!-- Removed padding for full-width -->
+      <div class="row research text-center">
+        <div class="col-12">
+          <h1 class="font-1">Research</h1>
+        </div>
+        <hr class="light-90">
+      </div>
+      <div>
+        
+        <!-- RESEARCH A -->
+        <div class="row justify-content-center mb-4 w-100">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="card text-center h-100 d-flex flex-row w-100"> <!-- Full-width card -->
+              <a href="#publications" class="d-flex align-items-center" style="flex: 1; width: 50%;"> <!-- Image side -->
+                <img src="./fig/qed.jpg" class="card-img-left w-100" alt="research_qedchem_im" style="height: auto; object-fit: contain;"/>
+              </a>
+              <div class="card-body d-flex flex-column justify-content-between" style="flex: 1; width: 50%;"> <!-- Text side -->
+                <h4 class="card-title" style="color: #b30ceb">Cavity QED Chemistry</h4>
+                <p class="card-text">
+                  Noble metal nanomaterials exhibit efficient light absorption across a wide spectral range, primarily due to localized surface plasmon resonance (LSPR).                    We study the excited-state dynamics of molecules coupled with the plasmon modes of nanoparticles. Strong coupling with plasmon modes generates hybrid light-matter states, similar to molecular polaritons in Fabry-Pérot cavities. 
+                  We develop theoretical and computational frameworks for modeling polariton-assisted photocatalysis, energy/charge transfer, and spectroscopy.
+                </p>
+                <div style="text-align: center;">
+                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: auto;">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESEARCH B -->
+        <div class="row justify-content-center mb-4 w-100">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="card text-center h-100 d-flex flex-row w-100"> <!-- Full-width card -->
+              <a href="#publications" class="d-flex align-items-center" style="flex: 1; width: 50%;"> <!-- Image side -->
+                <img src="./fig/ml.jpg" class="card-img-left w-100" alt="research_ml_im" style="height: auto; object-fit: contain;"/>
+              </a>
+              <div class="card-body d-flex flex-column justify-content-between" style="flex: 1; width: 50%;"> <!-- Text side -->
+                <h4 class="card-title" style="color: #b30ceb">Machine Learning Light-Matter</h4>
+                <p class="card-text">
+                  Understanding of light induced excited state dynamics of nanoparticle-molecule complexes is often challenging due to their inherent complexities.
+                  Are all these complexities essential for capturing the effective dynamics and interpreting experimental outcomes?
+                  If a reduced subspace exists that encodes the essential dynamics with minimal complexity, it would significantly simplify the problem.
+                  To explore this possibility, we integrate quantum dynamics with machine learning methods.
+                </p>
+                <div style="text-align: center;">
+                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: auto;">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  
+        <!-- RESEARCH C -->
+        <div class="row justify-content-center mb-4 w-100">
+          <div class="col-12 d-flex justify-content-center">
+            <div class="card text-center h-100 d-flex flex-row w-100"> <!-- Full-width card -->
+              <a href="#publications" class="d-flex align-items-center" style="flex: 1; width: 50%;"> <!-- Image side -->
+                <img src="./fig/spec.jpg" class="card-img-left w-100" alt="research_spec_im" style="height: auto; object-fit: contain;"/>
+              </a>
+              <div class="card-body d-flex flex-column justify-content-between" style="flex: 1; width: 50%;"> <!-- Text side -->
+                <h4 class="card-title" style="color: #b30ceb">Nonlinear Spectroscopy with Quantum Light</h4>
+                <p class="card-text">
+                  We study nonlinear spectroscopy of organic molecules under a full quantum description, treating both molecules and light quantum mechanically.
+                  One of the main objective of this research is to obercome the fundamental limit of convential light spectroscopy incorporating the quantum nature of light. 
+                  Entangled photons have shown promise in enhancing two-photon absorption and improving photochemical reaction efficiencies. 
+                  We develop theoretical and computational frameworks to broaden the fundamental understanding of entangled light-matter interactions and their connection with nonlinear spectroscopy.
+                </p>
+                <div style="text-align: center;">
+                  <a href="#publications" class="btn btn-gray-text-white-outline-black" style="width: auto;">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+    
+    
+  <!!==================================================================================================================================
+  <!-- Publications -->
+  <div class="lgray" id="publications">
+    <div class="container-fluid padding">
+      <div class="row publications text-center">
+        <div class="col-12">
+          <h1 class="font-1">Publications</h1>
+        </div>
+        <hr class="light-90">
+        
+        <div class="col-12 text-left">
+          <h5> Filter by Year || Research</h5>
+        </div>
+        
+        <div class="col-md-3 filter-dropdown">
+          <button id="filter-year-btn" class="dropdown-button  btn-gray">Year ▼ (All)</button>
+          <div class="dropdown-content" id="filter-year-options">
+            <button data-filter="all">All</button>
+            <button data-filter="2025">2025</button>
+            <button data-filter="2024">2024</button>
+            <button data-filter="2023">2023</button>
+            <button data-filter="2022">2022</button>
+            <button data-filter="2021">2021</button>
+            <button data-filter="2020">2020</button>
+            <button data-filter="2019">2019</button>
+            <button data-filter="2018">2018</button>
+            <button data-filter="2017">2017</button>
+          </div>
+        </div>
+      
+        <div class="col-md-3 filter-dropdown">
+          <button id="filter-area-btn" class="dropdown-button  btn-gray">Research ▼ (All) </button>
+          <div class="dropdown-content" id="filter-area-options">
+            <button data-filter="all">All</button>
+            <button data-filter="ml">ML</button>
+            <button data-filter="ent">Entanglement</button>
+            <button data-filter="spec">Spectroscopy</button>
+            <button data-filter="plasmon">Plasmon</button>
+          </div>
+        </div>
+
+
+        <div class="col-12 publication text-left" data-year="2025" data-area="ent" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Modeling entanglement dynamics of molecules interacting with entangled photons through Lindblad master equation approach</h4>
+            <p>Author(s): <strong>S. K. Giri</strong>, and G. C. Schatz</p>
+            <p>Journal: <strong> J. Chem. Phys. </strong> 162, 114106 (2025) </p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                    <div class="col-md-1">
+                        <a href="https://pubs.aip.org/aip/jcp/article/162/11/114106/3339919/Modeling-entanglement-dynamics-of-molecules" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo18" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center"> 
+                        <span class="mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Entanglement</strong></span>
+                        <span class="mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>2025</strong></span>
+                      </div>
+                    </div>
+              
+                </div>
+                <div id="bibinfo18" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_18,</p>
+                    <p>author = {Giri, Sajal Kumar and Schatz, George C.},</p>
+                    <p>title = {Modeling entanglement dynamics of molecules interacting with entangled photons through Lindblad master equation approach},</p>
+                    <p>journal = {The Journal of Chemical Physics},</p>
+                    <p>volume = {162},</p>
+                    <p>number = {11},</p>
+                    <p>pages = {114106},</p>
+                    <p>year = {2025},</p>
+                    <p>doi = {10.1063/5.0254272}</p>
+                    <p>}</p>
+                </div>
+            </div>
+        </div>
+
+
+  
+        <div class="col-12 publication text-left" data-year="2025" data-area="plasmon" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Plasmon dynamics in nanoclusters: Dephasing revealed by excited states evaluation</h4>
+            <p>Author(s): A. O. Bhasin, Y. S. Ceylan, A. D. Dillon, <strong>S. K. Giri</strong>, G. C. Schatz, R. L. M. Gieseking</p>
+            <p>Journal: <strong> J. Chem. Theory Comput. </strong> 21, 17 (2025) </p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                    <div class="col-md-1">
+                        <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jctc.4c01302" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo17" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center"> 
+                        <span class="mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Plasmon</strong></span>
+                        <span class="mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>2025</strong></span>
+                      </div>
+                    </div>
+                </div>
+                <div id="bibinfo17" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_17,</p>
+                    <p>author = {Bhasin, Anant O. and Ceylan, Yavuz S. and Dillon, Alva D. and Giri, Sajal Kumar and Schatz, George C. and Gieseking, and Rebecca L. M.},</p>
+                    <p>title = {Plasmon Dynamics in Nanoclusters: Dephasing Revealed by Excited States Evaluation},</p>
+                    <p>journal = {Journal of Chemical Theory and Computation},</p>
+                    <p>volume = {21},</p>
+                    <p>number = {1},</p>
+                    <p>pages = {17-28},</p>
+                    <p>year = {2025},</p>
+                    <p>doi = {10.1021/acs.jctc.4c01302}</p>
+                    <p>}</p>
+                </div>
+            </div>
+         </div>
+        
+        
+
+        <div class="col-12 publication text-left" data-year="2024" data-area="plasmon" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Plasmon-enhanced spectroscopy and photocatalysis</h4>
+            <p>Journal: <strong> Springer, Singapore </strong>, ISBN 978-981-97-5817-3 (2024)</p>
+            <p>Author(s): <strong> S. K. Giri </strong>, and G. C. Schatz</p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://link.springer.com/book/10.1007/978-981-97-5818-0" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/2402.13478v3" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo16" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Plasmon</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2024</strong></span>
+                      </div>
+                    </div>
+                  
+                  
+                </div>
+                <div id="bibinfo16" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                      <p>@article{Giri_16,</p>
+                      <p>Journal = {arXiv:2402.13478}</p>
+                      </p>}</p>
+                </div>
+            </div>
+        </div>
+
+
+         <div class="col-12 publication text-left" data-year="2024" data-area="plasmon" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Modeling surface-enhanced Raman scattering of Au-Pyrazine and Au-Pyrazine-Au nanorod dimer systems with the TD-DFTB method</h4>
+            <p>Author(s): <strong>S. K. Giri</strong>, and G. C. Schatz</p>
+            <p>Journal: <strong> J. Phys. Chem. C </strong> 128, 19270 (2024) </p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                    <div class="col-md-1">
+                        <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpcc.4c05828" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo15" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center"> 
+                        <span class="mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Plasmon</strong></span>
+                        <span class="mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>2024</strong></span>
+                      </div>
+                    </div>
+              
+                </div>
+                <div id="bibinfo15" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                      <p>@article{Giri_15,</p>
+                      <p>author = {Giri, Sajal Kumar and Schatz, George C.},</p>
+                      <p>title = {Modeling Surface-Enhanced Raman Scattering of Au-Pyrazine and Au-Pyrazine-Au Nanorod Dimer Systems with the TD-DFTB Method},</p>
+                      <p>journal = {The Journal of Physical Chemistry C},</p>
+                      <p>volume = {128},</p>
+                      <p>number = {45},</p>
+                      <p>pages = {19270-19279},</p>
+                      <p>year = {2024},</p>
+                      <p>doi = {10.1021/acs.jpcc.4c05828}</p>
+                      <p>}</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12 publication text-left" data-year="2024" data-area="plasmon" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Switching of electrochemical selectivity due to plasmonic field-induced dissociation</h4>
+            <p>Author(s): F. M. Alcorn , <strong>S. K. Giri</strong>, M. Chattoraj , R. Nixon , G. C. Schatz, and P. K. Jain</p>
+            <p>Journal: <strong> Proc. Natl. Acad. Sci. (USA) </strong> 121, e2404433121 (2024) </p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                    <div class="col-md-1">
+                        <a href="https://www.pnas.org/doi/10.1073/pnas.2404433121" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo14" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center"> 
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Plasmon</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2024</strong></span>
+                      </div>
+                    </div>
+              
+                </div>
+                <div id="bibinfo14" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                      <p>@article{Giri_14,</p>
+                      <p>author = {Francis M. Alcorn  and Sajal Kumar Giri  and Maya Chattoraj  and Rachel Nixon  and George C. Schatz  and Prashant K. Jain },</p>
+                      <p>title = {Switching of electrochemical selectivity due to plasmonic field-induced dissociation},</p>
+                      <p>journal = {Proceedings of the National Academy of Sciences},</p>
+                      <p>volume = {121},</p>
+                      <p>number = {41},</p>
+                      <p>pages = {e2404433121},</p>
+                      <p>year = {2024},</p>
+                      <p>doi = {10.1073/pnas.2404433121}</p>
+                      <p>}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 publication text-left" data-year="2024" data-area="ent" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Impact of classical and quantum light on donor-acceptor-donor molecules</h4>
+            <p>Author(s): H. Mandal<sup>*</sup>, <strong>S. K. Giri</strong><sup>*</sup>, S. Jovanovski, O. Varnavski, M. Zagorska, R. Ganczarczyk, T.-M. Chiang, G. C. Schatz,
+and T. Goodson III</p>
+          <p>[<sup>*</sup> <strong>Equal Contribution</strong>]</p>
+          <p>Journal: <strong> J. Phys. Chem. Lett. </strong> 15, 9493–9501 (2024) </p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                    <div class="col-md-1">
+                        <a href="https://pubs.acs.org/doi/10.1021/acs.jpclett.4c01948?ref=pdf" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo13" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Entanglement</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2024</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+                <div id="bibinfo13" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_13,</p>
+                    <p>author = {Mandal, Haraprasad and Giri, Sajal Kumar and Jovanovski, Sara and Varnavski, Oleg and Zagorska, Malgorzata and Ganczarczyk, Roman and Chiang, Tse-Min and Schatz, George C. and Goodson, Theodore},</p>
+                    <p>title = {Impact of classical and quantum light on donor-acceptor-donor molecules},</p>
+                    <p>journal = {The Journal of Physical Chemistry Letters},</p>
+                    <p>volume = {0},</p>
+                    <p>number = {0},</p>
+                    <p>pages = {9493-9501},</p>
+                    <p>year = {2024},</p>
+                    <p>doi = {10.1021/acs.jpclett.4c01948}</p>
+                    <p>}</p>
+                </div>
+            </div>
+        </div>
+        
+        
+         <div class="col-12 publication text-left" data-year="2024" data-area="plasmon" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Laser pulse induced second- and third-harmonic generation of gold nanorods with real-time time-dependent density functional tight binding (RT-TDDFTB) method</h4>
+            <p>Journal: <strong> J. Chem. Phys. </strong> 161, 044703 (2024)</p>
+            <p>Author(s): <strong>S. K. Giri</strong>, and G. C. Schatz</p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://pubs.aip.org/aip/jcp/article/161/4/044703/3304133/Laser-pulse-induced-second-and-third-harmonic?searchresult=1" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/2405.00913" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a id="showbibinfo12" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Plasmon</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2024</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+                <div id="bibinfo12" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_12,</p>
+                    <p>author = {Giri, Sajal Kumar and Schatz, George C.},</p>
+                    <p>title = {Laser pulse induced second- and third-harmonic generation of gold nanorods with real-time time-dependent density functional tight binding (RT-TDDFTB) method},</p>
+                    <p>journal = {The Journal of Chemical Physics},</p>
+                    <p>volume = {161},</p>
+                    <p>number = {4},</p>
+                    <p>pages = {044703},</p>
+                    <p>month = {07},</p>
+                    <p>year = {2024},</p>
+                    <p>doi = {10.1063/5.0216887}</p>
+                    <p>}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 publication text-left" data-year="2024" data-area="ml" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Roadmap on data-centric materials science</h4>
+            <p>Journal: <strong> Modelling Simul. Mater. Sci. Eng. </strong> 32  063301 (2024)</p>
+            <p>Author(s): S. Baue, ..., <strong> S. K. Giri </strong>, ..., and M. Scheffler</p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://iopscience.iop.org/article/10.1088/1361-651X/ad4d0d/meta" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/2402.10932" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo11" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <a href="https://www.bigmax.mpg.de" class="btn btn-gray-text-white-outline-black btn-lg mt-2 me-3" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">BiGmax Research</a>
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>ML</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2024</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+                <div id="bibinfo11" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_11,</p>
+                    </p>author = {Bauer, Stefan and Benner, Peter and Bereau, Tristan and Blum, Volker and Boley, Mario and Carbogno, Christian and Catlow, C. Richard A. and Dehm, Gerhard and Eibl, Sebastian and Ernstorfer, Ralph and Fekete, {\'A}d{\'a}m and Foppa, Lucas and Fratzl, Peter and Freysoldt, Christoph and Gault, Baptiste and Ghiringhelli, Luca M. and Giri, Sajal K. and Gladyshev, Anton and Goyal, Pawan and Hattrick-Simpers, Jason and Kabalan, Lara and Karpov, Petr and Khorrami, Mohammad S. and Koch, Christoph T. and Kokott, Sebastian and Kosch, Thomas and Kowalec, Igor and Kremer, Kurt and Leitherer, Andreas and Li, Yue and Liebscher, Christian H. and Logsdail, Andrew J. and Lu, Zhongwei and Luong, Felix and Marek, Andreas and Merz, Florian and Mianroodi, Jaber R. and Neugebauer, J{\"o}rg and Pei, Zongrui and Purcell, Thomas A. R. and Raabe, Dierk and Rampp, Markus and Rossi, Mariana and Rost, Jan-Michael and Saal, James and Saalmann, Ulf and Sasidhar, Kasturi Narasimha and Saxena, Alaukik and Sbail{\`o}, Luigi and Scheidgen, Markus and Schloz, Marcel and Schmidt, Daniel F. and Teshuva, Simon and Trunschke, Annette and Wei, Ye and Weikum, Gerhard and Xian, R. Patrick and Yao, Yi and Yin, Junqi and Zhao, Meng and Scheffler, Matthias},</p>
+                    </p>title = {Roadmap on data-centric materials science},</p>
+                    </p>journal = {Modelling and Simulation in Materials Science and Engineering},</p>
+                    </p>volume = {32},</p>
+                    </p>number = {6},</p>
+                    </p>pages = {063301},</p>
+                    </p>month = {jul},</p>
+                    </p>year = {2024},</p>
+                    </p>publisher = {IOP Publishing}</p>
+                    </p>doi = {10.1088/1361-651X/ad4d0d},</p>
+                    </p>url = {https://dx.doi.org/10.1088/1361-651X/ad4d0d},</p>
+                    <p>}</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 publication text-left" data-year="2023" data-area="ent" style="background-color: #FFFFFF; color: #000000;">
+            <h4>Colors of entangled two-photon absorption</h4>
+            <p>Journal: <strong> Proc. Natl. Acad. Sci. (USA) </strong> 120, e2307719120 (2023) </p>
+            <p>Author(s): O. Varnavski, <strong> S. K. Giri </strong>, T. Chiang, C. J. Zeman IV, G. C. Schatz, and T. Goodson III </p>
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://www.pnas.org/doi/10.1073/pnas.2307719120" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a id="showbibinfo10" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+
+              
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <!--<a href="https://www.eurekalert.org/news-releases/1045328" class="btn btn-gray-text-white-outline-black btn-sm mt-2 me-3" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">EurekAlert</a>-->
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Entanglement</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2023</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+                <div id="bibinfo10" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_10<p/>
+                    <p>author = {O. Varnavski; S. K. Giri; T.-M. Chiang;  C. J. Zeman;  G. C. Schatz;  T. Goodson},<p/>
+                    <p>title = {Colors of entangled two-photon absorption},<p/>
+                    <p>journal = {Proceedings of the National Academy of Sciences (USA)},<p/>
+                    <p>volume = {120},<p/>
+                    <p>number = {35},<p/>
+                    <p>pages = {e2307719120},<p/>
+                    <p>year = {2023},<p/>
+                    <p>doi = {10.1073/pnas.2307719120},<p/>
+                    <p>URL = {https://www.pnas.org/doi/abs/10.1073/pnas.2307719120},<p/>
+                    <p>eprint = {https://www.pnas.org/doi/pdf/10.1073/pnas.2307719120}<p/>
+                    <p/>}<p/>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 publication text-left" data-year="2023" data-area="plasmon" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Photodissociation of H2 on Ag and Au nanoparticles: Effect of size and plasmon versus interband transitions on threshold intensities for dissociation</h4>
+            <p>Journal: <strong> J. Phys. Chem. C </strong> 127, 4115 (2023) </p>
+            <p>Author(s): <strong> S. K. Giri </strong>,  and G. C. Schatz </p>  
+        
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://pubs.acs.org/doi/full/10.1021/acs.jpcc.3c00006" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/2301.00469" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo9" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Plasmon</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2023</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+                <div id="bibinfo9" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_9,</p>
+                      <p>author = {S. K. Giri and G. C. Schatz},</p>
+                      <p>title = {Photodissociation of H2 on Ag and Au Nanoparticles: Effect of Size and Plasmon versus Interband Transitions on Threshold Intensities for Dissociation},</p>
+                      <p>journal = {The Journal of Physical Chemistry C},</p>
+                      <p>volume = {127},</p>
+                      <p>number = {8},</p>
+                      <p>pages = {4115-4123},</p>
+                      <p>year = {2023},</p>
+                      <p>doi = {10.1021/acs.jpcc.3c00006}</p>
+                      <p>}</p>
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="col-12 publication text-left" data-year="2022" data-area="ent" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Manipulating two-photon absorption of molecules through efficient optimization of entangled light </h4>
+            <p>Journal: <strong> J. Phys. Chem. Lett. </strong> 13, 10140 (2022)  </p>
+            <p>Author(s): <strong> S. K. Giri </strong>,  and G. C. Schatz </p>  
+
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://pubs.acs.org/doi/10.1021/acs.jpclett.2c02842" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/2409.11368" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo8" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Entanglement</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2022</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+              
+                <div id="bibinfo8" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                      <p>@article{Giri_8,</p>
+                      <p>author = {S. K. Giri and G. C. Schatz},</p>
+                      <p>title = {Manipulating Two-Photon Absorption of Molecules through Efficient Optimization of Entangled Light},</p>
+                      <p>journal = {The Journal of Physical Chemistry Letters},</p>
+                      <p>volume = {13},</p>
+                      <p>number = {43},</p>
+                      <p>pages = {10140-10146},</p>
+                      <p>year = {2022},</p>
+                      <p>doi = {10.1021/acs.jpclett.2c02842}</p>
+                      <p>}</p>
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="col-12 publication text-left" data-year="2022" data-area="spec" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Controlling thermodynamics of a quantum heat engine with modulated amplitude drivings  </h4>
+            <p>Journal: <strong> Phys. Rev. E </strong> 106, 024131 (2022) </p>
+            <p>Author(s): <strong> S. K. Giri </strong>,  and  H. P. Goswami </p>  
+
+          <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.106.024131" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/2203.15005" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo7" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Spectroscopy</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2022</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+            
+                <div id="bibinfo7" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_7,</p>
+                    <p>author = {Giri, Sajal Kumar and Goswami, Himangshu Prabal},</p>
+                    <p>title = {Controlling thermodynamics of a quantum heat engine with modulated amplitude drivings},</p>
+                    <p>journal = {Physical Review E },</p>
+                    <p>volume = {106},</p>
+                    <p>issue = {2},</p>
+                    <p>pages = {024131},</p>
+                    <p>numpages = {8},</p>
+                    <p>year = {2022},</p>
+                    <p>month = {Aug},</p>
+                    <p>publisher = {American Physical Society},</p>
+                    <p>doi = {10.1103/PhysRevE.106.024131}</p>
+                    <p>}</p>
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="col-12 publication text-left" data-year="2021" data-area="ml" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Perspectives for analyzing non-linear photo ionization spectra with deep neural networks trained with synthetic Hamilton matrices </h4>
+            <p>Journal: <strong> Faraday Discuss. </strong> 228, 502 (2021) </p>
+            <p>Author(s): <strong> S. K. Giri </strong>, L. Alonso, U. Saalmann, and J. M. Rost</p>  
+
+                  <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://pubs.rsc.org/en/content/articlelanding/2021/fd/d0fd00117a" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="https://www.arxiv.org/abs/2010.06016" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo6" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>ML</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2021</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+            
+                <div id="bibinfo6" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_6,</p>
+                    <p>author = {Giri, Sajal Kumar and Alonso, Lazaro and Saalmann, Ulf and Rost, Jan Michael},</p>
+                    <p>title = {Perspectives for analyzing non-linear photo-ionization spectra with deep neural networks trained with synthetic Hamilton matrices},</p>
+                    <p>journal = {Faraday Discussions},</p>
+                    <p>volume = {228},</p>
+                    <p>issue = {0},</p>
+                    <p>pages = {502-518},</p>
+                    <p>year = {2021},</p>
+                    <p>publisher = {The Royal Society of Chemistry},</p>
+                    <p>doi = {10.1039/D0FD00117A}</p>
+                    <p>}</p>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="col-12 publication text-left" data-year="2020" data-area="ml" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Purifying electron spectra from noisy pulses with machine learning using synthetic Hamilton matrices </h4>
+            <p>Journal: <strong> Phys. Rev. Lett. </strong> 124, 113201 (2020) </p>
+            <p>Author(s): <strong> S. K. Giri </strong>, U. Saalmann, and J. M. Rost </p>  
+          
+           <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.124.113201" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/1908.02600" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo5" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>ML</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2020</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+            
+                <div id="bibinfo5" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_5,</p>
+                    <p>author = {Giri, Sajal Kumar and Saalmann, Ulf and Rost, Jan M.},</p>
+                    <p>title = {Purifying electron spectra from noisy pulses with machine learning using synthetic Hamilton matrices},</p>
+                    <p>journal = {Physical Review Letters},</p>
+                    <p>volume = {124},</p>
+                    <p>issue = {11},</p>
+                    <p>pages = {113201},</p>
+                    <p>numpages = {6},</p>
+                    <p>year = {2020},</p>
+                    <p>month = {Mar},</p>
+                    <p>publisher = {American Physical Society},</p>
+                    <p>doi = {10.1103/PhysRevLett.124.113201}</p>
+                    <p>}</p>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="col-12 publication text-left" data-year="2019" data-area="ml" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Nonequilibrium fluctuations of a driven quantum heat engine via machine learning </h4>
+            <p>Journal: <strong> Phys. Rev. E </strong> 99, 022104 (2019) </p>
+            <p>Author(s): <strong> S. K. Giri </strong>,  and  H. P. Goswami </p> 
+
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.99.022104" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/1810.05913" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo4" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" >BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>ML</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2019</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+            
+                <div id="bibinfo4" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_4,</p>
+                    <p>author = {Giri, Sajal Kumar and Goswami, Himangshu Prabal},</p>
+                    <p>title = {Nonequilibrium fluctuations of a driven quantum heat engine via machine learning},</p>
+                    <p>journal = {Physical Review E},</p>
+                    <p>volume = {99},</p>
+                    <p>issue = {2},</p>
+                    <p>pages = {022104},</p>
+                    <p>numpages = {8},</p>
+                    <p>year = {2019},</p>
+                    <p>month = {Feb},</p>
+                    <p>publisher = {American Physical Society},</p>
+                    <p>doi = {10.1103/PhysRevE.99.022104}</p>
+                    <p>}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 publication text-left" data-year="2018" data-area="spec" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Adiabatic passage to the continuum: Controlling ionization with chirped laser pulses </h4>
+            <p>Journal: <strong> Phys. Rev. Lett. </strong> 121, 153203 (2018) </p>
+            <p>Author(s): U. Saalmann, <strong> S. K. Giri </strong> and J. M. Rost </p>  
+
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.121.153203" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/1807.01465" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo3" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Spectroscopy</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2018</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+            
+                <div id="bibinfo3" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_3,</p>
+                    <p>author = {Saalmann, Ulf and Giri, Sajal Kumar and Rost, Jan M.},</p>
+                    <p>title = {Adiabatic passage to the continuum: Controlling ionization with chirped laser pulses},</p>
+                    <p>journal = {Physical Review Letters},</p>
+                    <p>volume = {121},</p>
+                    <p>issue = {15},</p>
+                    <p>pages = {153203},</p>
+                    <p>numpages = {5},</p>
+                    <p>year = {2018},</p>
+                    <p>month = {Oct},</p>
+                    <p>publisher = {American Physical Society},</p>
+                    <p>doi = {10.1103/PhysRevLett.121.153203}</p>
+                    <p>}</p>
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="col-12 publication text-left" data-year="2017" data-area="spec" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Geometric phaselike effects in a quantum heat engine  </h4>
+            <p>Journal: <strong> Phys. Rev. E </strong> 96, 052129 (2017) </p>
+            <p>Author(s): <strong> S. K. Giri </strong>,  and  H. P. Goswami </p>  
+
+             <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.96.052129" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="https://arxiv.org/abs/1708.03305" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo2" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Spectroscopy</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2017</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+            
+                <div id="bibinfo2" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_2,</p>
+                    <p>author = {Giri, Sajal Kumar and Goswami, Himangshu Prabal},</p>
+                    <p>title = {Geometric phaselike effects in a quantum heat engine},</p>
+                    <p>journal = {Physical Review E},</p>
+                    <p>volume = {96},</p>
+                    <p>issue = {5},</p>
+                    <p>pages = {052129},</p>
+                    <p>numpages = {7},</p>
+                    <p>year = {2017},</p>
+                    <p>month = {Nov},</p>
+                    <p>publisher = {American Physical Society},</p>
+                    <p>doi = {10.1103/PhysRevE.96.052129}</p>
+                    <p>}</p>
+                </div>
+            </div>
+
+          
+        </div>
+
+        <div class="col-12 publication text-left" data-year="2017" data-area="spec" style="background-color: #FFFFFF; color: #000000;">
+            <h4> Single-photon ionization in intense, fluctuating pulses </h4>
+            <p>Journal: <strong> J. Mod. Opt. </strong> 64, 1004 (2017) </p>
+            <p>Author(s): <strong> S. K. Giri </strong>, U. Saalmann, and J. M. Rost </p>  
+
+            <div class="container text-left mt-0">
+                <div class="row">
+                  
+                    <div class="col-md-1">
+                        <a href="https://www.tandfonline.com/doi/full/10.1080/09500340.2016.1271150" class="btn btn-green-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px" target="_blank">DOI</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="https://www.tandfonline.com/doi/full/10.1080/09500340.2016.1271150" class="btn btn-red-text-white-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;" target="_blank">arXiv</a>
+                    </div>
+                  
+                    <div class="col-md-1">
+                        <a id="showbibinfo1" class="showbibinfo btn btn-white-text-black-outline-black btn-lg mt-2" style="padding-top: 2px; padding-bottom: 2px;">BibTeX</a>
+                    </div>
+                  
+                    <div class="col-md-8 ml-auto d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <span class="text-gray mt-2 me-3" style="font-size: 1.3rem; color: #b0aeae;"><strong>Spectroscopy</strong></span>
+                        <span class="text-gray mt-2" style="font-size: 1.3rem; color: #b0aeae;"><strong>2017</strong></span>
+                      </div>
+                    </div>
+                  
+                </div>
+            
+                <div id="bibinfo1" class="bibinfo expand-info" style="background-color: #f2f2f2; color: black;">
+                    <p>@article{Giri_1,</p>
+                    <p>author = {Giri, Sajal Kumar and Ulf Saalmann and Jan M. Rost},</p>
+                    <p>title = {Single-photon ionization in intense, fluctuating pulses},</p>
+                    <p>journal = {Journal of Modern Optics},</p>
+                    <p>volume = {64},</p>
+                    <p>number = {10-11},</p>
+                    <p>pages = {1004-1009},</p>
+                    <p>year = {2017},</p>
+                    <p>publisher = {Taylor \& Francis},</p>
+                    <p>doi = {10.1080/09500340.2016.12711509}</p>
+                    <p>}</p>
+                </div>
+            </div>
+        
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+      
+
+  <!!================================================================================================
+  <!--  FOOTER  -->
+  <footer>
+    <div class="container-fluid" id="contactme">
+      <div class="row text-center">
+        <div class="col-md-4" style="padding-bottom: 0;">
+          <p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2962.3178394117144!2d-87.67845232381927!3d42.05780617122262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fda9f1ce32d5f%3A0x2ed194bb956cab66!2sNorthwestern%20University%20Technological%20Institute!5e0!3m2!1sen!2sus!4v1714790287850!5m2!1sen!2sus" 
+              width="300" height="200" 
+              style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </p>
+        </div>
+        <div class="col-md-8" style="padding-bottom: 0;">
+          <hr class="light-90" style="border-color: antiquewhite;">
+          <h5>Contact</h5>
+          <hr class="light-90" style="border-color: antiquewhite">
+          <div class="col-12 social padding">
+            <a href="https://scholar.google.com/citations?user=HlKvDGoAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar-square"></i></a>
+            <a href="mailto:sajal.giri@northwestern.edu"><i class="fa fa-envelope"></i></a>
+          </div>
+        </div>
+
+
+        <div class="image-row">
+          <a href="https://www.iitk.ac.in/chm/" target="_blank">
+              <img src="fig/logo1.png" alt="IITK Logo" style="width: 150px; height: auto;">
+          </a> 
+          <a href="https://www.pks.mpg.de" target="_blank">
+              <img src="fig/logo2.png" alt="Max Planck Institute Logo" style="width: 150px; height: auto;">
+          </a> 
+          <a href="https://chemistry.northwestern.edu" target="_blank">
+              <img src="fig/logo3.png" alt="NU Logo" style="width: 150px; height: auto;">
+          </a> 
+        </div>
+          
+        
+        <div class="col-12" style="padding-bottom: 0;">
+          <hr class="light-100" style="border-color: antiquewhite;">
+          <p>&copy; 2024 Sajal Kumar Giri</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+    
+  // Scroll Options 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var isScrolling = false; // Flag to prevent multiple simultaneous animations
+      var scrollTimeout; // To debounce scroll events
+      var offset = 50; // Adjust this value to match your header height or desired space at the top
+      
+      function applyActiveClass() {
+        var scrollPos = $(document).scrollTop();
+        var windowHeight = $(window).height();
+        var currentActive = null;
+  
+        $('a.nav-link').each(function() {
+          var currLink = $(this);
+          var refElement = $(currLink.attr("href"));
+  
+          if (refElement.length) {
+            var elementTop = refElement.offset().top;
+            var elementBottom = elementTop + refElement.outerHeight();
+  
+            // Check if the section is within the viewport
+            if (elementTop <= scrollPos + windowHeight / 2 &&
+                elementBottom > scrollPos + windowHeight / 2) {
+              currentActive = currLink;
+            }
+          }
+        });
+  
+        if (currentActive) {
+          $('a.nav-link').removeClass("active");
+          currentActive.addClass("active");
+        }
+      }
+  
+      function scrollToElement(hash, callback) {
+        if (isScrolling) return;
+  
+        var offsetTop = $(hash).offset().top - offset; // Apply the offset here
+        var scrollDuration = 100; // Adjust duration as needed
+  
+        isScrolling = true;
+  
+        $('html, body').stop().animate({
+          scrollTop: offsetTop
+        }, scrollDuration, 'swing', function() {
+          isScrolling = false;
+          if (callback) callback();
+        });
+  
+        // Optionally update the URL hash
+        window.location.hash = hash;
+      }
+  
+      $('a.nav-link').on('click', function(event) {
+        event.preventDefault();
+  
+        var hash = this.hash;
+  
+        // Directly set active class on click
+        $('a.nav-link').removeClass('active');
+        $(this).addClass('active');
+  
+        // Smoothly scroll to the target section
+        scrollToElement(hash);
+      });
+  
+      $('.arrow-up').on('click', function() {
+        if (isScrolling) return;
+  
+        var scrollDuration = 400;
+        isScrolling = true;
+  
+        $('html, body').stop().animate({
+          scrollTop: $(window).scrollTop() - $(window).height()
+        }, scrollDuration, 'swing', function() {
+          isScrolling = false;
+          applyActiveClass();
+        });
+      });
+  
+      $('.arrow-down').on('click', function() {
+        if (isScrolling) return;
+  
+        var scrollDuration = 400;
+        isScrolling = true;
+  
+        $('html, body').stop().animate({
+          scrollTop: $(window).scrollTop() + $(window).height()
+        }, scrollDuration, 'swing', function() {
+          isScrolling = false;
+          applyActiveClass();
+        });
+      });
+  
+      $(document).on('scroll', function() {
+        if (!isScrolling) {
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(applyActiveClass, 0); // Debounce scroll event
+        }
+      });
+  
+      // Check if there is an initial hash in the URL and apply the active class
+      if (window.location.hash) {
+        var initialHash = window.location.hash;
+        $('a.nav-link').removeClass('active');
+        $('a.nav-link[href="' + initialHash + '"]').addClass('active');
+        scrollToElement(initialHash);
+      }
+    });
   </script>
+  
+
+  // Scroll Options Contd.
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+  
+
+  // Publication options
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const filterYearButton = document.getElementById("filter-year-btn");
+      const filterYearOptions = document.getElementById("filter-year-options");
+      const filterAreaButton = document.getElementById("filter-area-btn");
+      const filterAreaOptions = document.getElementById("filter-area-options");
+      const publications = document.querySelectorAll(".publication");
+  
+      function toggleDropdown(dropdown) {
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      }
+  
+      function filterPublications() {
+        const selectedYear = filterYearButton.getAttribute("data-filter");
+        const selectedArea = filterAreaButton.getAttribute("data-filter");
+  
+        publications.forEach(publication => {
+          const publicationYear = publication.getAttribute("data-year");
+          const publicationArea = publication.getAttribute("data-area");
+  
+          const yearFilterMatches = (selectedYear === "all" || selectedYear === publicationYear);
+          const areaFilterMatches = (selectedArea === "all" || selectedArea === publicationArea);
+  
+          if (yearFilterMatches && areaFilterMatches) {
+            publication.style.display = "block";
+          } else {
+            publication.style.display = "none";
+          }
+        });
+      }
+  
+      // Set default filters to "all" and update button text
+      filterYearButton.setAttribute("data-filter", "all");
+      filterYearButton.textContent = "Year ▼ (All)";
+  
+      filterAreaButton.setAttribute("data-filter", "all");
+      filterAreaButton.textContent = "Research ▼ (All)";
+  
+      filterYearButton.addEventListener("click", function() {
+        toggleDropdown(filterYearOptions);
+      });
+  
+      filterYearOptions.addEventListener("click", function(event) {
+        const target = event.target;
+        if (target.tagName === "BUTTON") {
+          const yearFilter = target.getAttribute("data-filter");
+          filterYearButton.textContent = `Year ▼ (${target.textContent})`;
+          filterYearButton.setAttribute("data-filter", yearFilter);
+          filterYearOptions.style.display = "none";
+          filterPublications();
+        }
+      });
+  
+      filterAreaButton.addEventListener("click", function() {
+        toggleDropdown(filterAreaOptions);
+      });
+  
+      filterAreaOptions.addEventListener("click", function(event) {
+        const target = event.target;
+        if (target.tagName === "BUTTON") {
+          const areaFilter = target.getAttribute("data-filter");
+          filterAreaButton.textContent = `Research ▼ (${target.textContent})`;
+          filterAreaButton.setAttribute("data-filter", areaFilter);
+          filterAreaOptions.style.display = "none";
+          filterPublications();
+        }
+      });
+  
+      document.addEventListener("click", function(event) {
+        if (!filterYearOptions.contains(event.target) && event.target !== filterYearButton) {
+          filterYearOptions.style.display = "none";
+        }
+        if (!filterAreaOptions.contains(event.target) && event.target !== filterAreaButton) {
+          filterAreaOptions.style.display = "none";
+        }
+      });
+  
+      filterPublications(); // Initial filter application on page load
+    });
+  </script>
+
+
+  // BibTex Option
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all elements with class 'showbibinfo' (all BibTex buttons)
+        var bibButtons = document.querySelectorAll('.showbibinfo');
+    
+        // Add click event listener to each BibTex button
+        bibButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                var bibinfoId = this.getAttribute('id').replace('showbibinfo', 'bibinfo');
+                var bibinfo = document.getElementById(bibinfoId);
+                toggleVisibility(bibinfo);
+                event.stopPropagation(); // Prevent event from bubbling up
+            });
+        });
+    
+        // Add a click event listener to the document to hide bibinfo if clicked outside
+        document.addEventListener('click', function(event) {
+            bibButtons.forEach(function(button) {
+                var bibinfoId = button.getAttribute('id').replace('showbibinfo', 'bibinfo');
+                var bibinfo = document.getElementById(bibinfoId);
+                if (!button.contains(event.target) && !bibinfo.contains(event.target)) {
+                    bibinfo.style.display = 'none';
+                }
+            });
+        });
+    
+        // Function to toggle visibility
+        function toggleVisibility(element) {
+            if (element.style.display === 'block') {
+                element.style.display = 'none';
+            } else {
+                element.style.display = 'block';
+            }
+        }
+    });
+  </script>
+
 </body>
+  
 </html>
+
